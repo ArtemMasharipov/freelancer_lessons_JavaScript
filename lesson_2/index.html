@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Lesson 2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>ДЗ. УРОК №2</h1>
+		</header>
+		<main class="main">
+			<div class="homework">
+				<div class="homework__container">
+					<div class="homework__body">
+						<div class="homework__two task0">
+							<p class="task0__item1">Задача 0. Обчислити значення виразів</p>
+							<p>1) S = a + 12 + b</p>
+							<div>Введіть значення змінної a <input type="text" id="a">
+								<div>Введіть значення змінної b <input type="text" id="b">
+									<div class="task0__calc">
+										<button onclick="calculateSumZero()">Обчислити</button>
+										<div id="resultZero">S1</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task0">
+							<p>2) S2 = Math.sqrt((a + b) / (2 * a))</p>
+							<div>Введіть значення змінної a <input type="text" id="a_one">
+								<div>Введіть значення змінної b <input type="text" id="b_one">
+									<div class="task0__calc">
+										<button onclick="calculateOne()">Обчислити</button>
+										<div id="resultOne">S2</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task0">
+							<p>3) S3 = Math.cbrt((a + b) * c)</p>
+							<div>Введіть значення змінної a <input type="text" id="a_two">
+								<div>Введіть значення змінної b <input type="text" id="b_two">
+									<div>Введіть значення змінної c <input type="text" id="c_two">
+										<div class="task0__calc">
+											<button onclick="calculateTwo()">Обчислити</button>
+											<div id="resultTwo">S3</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task0">
+							<p>4) S4 = Math.sin(a / -b)</p>
+							<div>Введіть значення змінної a <input type="text" id="a_three">
+								<div>Введіть значення змінної b <input type="text" id="b_three">
+									<div class="task0__calc">
+										<button onclick="calculateThree()">Обчислити</button>
+										<div id="resultThree">S4</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task1">
+							<p>Задача 1. Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+							</p>
+							<div>Введіть значення змінної a <input type="text" id="a_task1">
+								<div>Введіть значення змінної b <input type="text" id="b_task1">
+									<div class="task0__calc">
+										<button onclick="calculateTaskOne()">Обчислити</button>
+										<table border="1">
+											<tr>
+												<td>Cума</td>
+												<td id="sum"></td>
+											</tr>
+											<tr>
+												<td>Добуток</td>
+												<td id="product"></td>
+											</tr>
+											<tr>
+												<td>Частка</td>
+												<td id="division"></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task2">
+							<p>Задача 2. Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.</p>
+							<div>Введіть дату народження <input type="text" id="birthday">
+								<div>Введіть поточний рік <input type="text" id="currentYear">
+									<div class="task0__calc">
+										<button onclick="calculateTaskTwo()">Обчислити</button>
+										<div id="resultTask2"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task3">
+							<p>Задача 3. Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5%
+								відзагальної вартості).</p>
+							<div>Введіть вартість одиниці товару <input type="text" id="price">
+								<div>Введіть кількість одиниць товару <input type="text" id="quantity">
+									<div class="task0__calc">
+										<button onclick="calculateTaskThree()">Обчислити</button>
+										<div id="resultTask3"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task4">
+							<p>Задача 4. Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.</p>
+							<div>Введіть значення довжини <input type="text" id="lenght">
+								<div class="task0__calc">
+									<button onclick="calculateTaskFour()">Обчислити</button>
+									<div id="resultTask4"></div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task5">
+							<p>Задача 5. Дано кількість секунд, що пройшла від початку доби. Визначити скільки це годин і
+								хвилин.</p>
+							<div>Введіть кількість секунд <input type="text" id="time">
+								<div class="task0__calc">
+									<button onclick="calculateTaskFive()">Обчислити</button>
+									<div id="resultTask5"></div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task6">
+							<p>Задача 6. З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити
+								вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті)
+								використовуючи елементи розмітки.</p>
+							<div>Введіть вартість товару 1 <input type="text" id="productOneCost">
+								<div>Введіть кількість товару 1 <input type="text" id="productOneQuantity">
+									<div>Введіть вартість товару 2<input type="text" id="productTwoCost">
+										<div>Введіть кількість товару 2 <input type="text" id="productTwoQuantity">
+											<div>Введіть вартість товару 3 <input type="text" id="productThreeCost">
+												<div>Введіть кількість товару 3 <input type="text" id="productThreeQuantity">
+													<div class="task0__calc">
+														<button onclick="calculateTaskSix()">Обчислити</button>
+														<div id="resultTask6"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="homework__two task7">
+							<p>Задача 7. Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0
+								до 6).</p>
+							<div class="task0__calc">
+								<button onclick="calculateTaskSeven()">Знайти суму</button>
+								<div id="resultTask7"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+		</footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
