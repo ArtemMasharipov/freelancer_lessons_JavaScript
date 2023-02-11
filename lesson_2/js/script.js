@@ -56,10 +56,10 @@ function calculateTaskOne() {
 // Задача 2. Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.
 // ================================================================
 function calculateTaskTwo() {
-	let currentYear = document.getElementById("currentYear").value;
-	let birthday = document.getElementById("birthday").value;
-	const userAge = currentYear - birthday;
-	document.getElementById("resultTask2").innerHTML = `Вам ${userAge} років(рік)`;
+  let currentYear = parseInt(document.getElementById("currentYear").value);
+  let birthday = parseInt(document.getElementById("birthday").value);
+  const userAge = currentYear - birthday;
+  document.getElementById("resultTask2").innerHTML = `Вам ${userAge} років(рік)`;
 }
 // ================================================================
 // Задача 3. Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).
