@@ -76,9 +76,9 @@ function calculateTaskThree() {
 // Задача 4. Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
 // ================================================================
 function calculateTaskFour() {
-	let smLenght = parseFloat(document.getElementById("lenght").value);
-	const meterLenght = smLenght / 100;
-	const kmLenght = smLenght / 1e5;
+	let cmLenght = parseFloat(document.getElementById("lenght").value);
+	const meterLenght = cmLenght / 100;
+	const kmLenght = cmLenght / 1e5;
 	document.getElementById("resultTask4").innerHTML = `Довжина в метрах: ${meterLenght.toFixed(3)} м; кілометрах: ${kmLenght.toFixed(5)} км`;
 }
 // ================================================================
