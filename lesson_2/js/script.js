@@ -96,11 +96,11 @@ function calculateTaskFive() {
 // ================================================================
 function calculateTaskSix() {
 	const productOneCost = parseFloat(document.getElementById("productOneCost").value);
-	const productOneQuantity = parseFloat(document.getElementById("productOneQuantity").value);
+	const productOneQuantity = parseInt(document.getElementById("productOneQuantity").value);
 	const productTwoCost = parseFloat(document.getElementById("productTwoCost").value);
-	const productTwoQuantity = parseFloat(document.getElementById("productTwoQuantity").value);
+	const productTwoQuantity = parseInt(document.getElementById("productTwoQuantity").value);
 	const productThreeCost = parseFloat(document.getElementById("productThreeCost").value);
-	const productThreeQuantity = parseFloat(document.getElementById("productThreeQuantity").value);
+	const productThreeQuantity = parseInt(document.getElementById("productThreeQuantity").value);
 
 	const productOneTotal = (productOneCost * productOneQuantity).toFixed(2);
 	const productTwoTotal = (productTwoCost * productTwoQuantity).toFixed(2);
