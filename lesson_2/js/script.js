@@ -150,8 +150,8 @@ function calculateTaskSix() {
 // ================================================================
 
 function calculateTaskSeven() {
-	const month = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-	const dayOfWeek = Math.floor(Math.random() * (6 - 0 + 1));
+	const month = Math.floor(Math.random() * 12) + 1;
+	const dayOfWeek = Math.floor(Math.random() * 7);
 	const sum = month + dayOfWeek;
 	const result = document.getElementById("resultTask7");
 	result.innerHTML = `Сума номера місяця ${month} та номера дня ${dayOfWeek}: ${sum}`;
