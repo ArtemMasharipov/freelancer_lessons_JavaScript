@@ -9,7 +9,7 @@ function calculateSumZero() {
 	let b = parseFloat(document.getElementById("b").value);
 	const C = 12;
 	const S1 = a + C + b;
-	document.getElementById("resultZero").innerHTML = "S1 = " + S1;
+	document.getElementById("resultZero").innerHTML = "S1 = " + S1.toFixed(2);
 }
 // ================================================================
 // Задача 0.2 S2=Math.sqrt((a + b) / (2 * a))
@@ -18,7 +18,7 @@ function calculateOne() {
 	let a = parseFloat(document.getElementById("a_one").value);
 	let b = parseFloat(document.getElementById("b_one").value);
 	const S2 = Math.sqrt((a + b) / (2 * a));
-	document.getElementById("resultOne").innerHTML = "S2 = " + S2;
+	document.getElementById("resultOne").innerHTML = "S2 = " + S2.toFixed(2);
 }
 // ================================================================
 // Задача 0.3 S3=Math.cbrt((a + b) * c)
@@ -28,7 +28,7 @@ function calculateTwo() {
 	let b = parseFloat(document.getElementById("b_two").value);
 	let c = parseFloat(document.getElementById("c_two").value);
 	const S3 = Math.cbrt((a + b) * c);
-	document.getElementById("resultTwo").innerHTML = "S3 = " + S3;
+	document.getElementById("resultTwo").innerHTML = "S3 = " + S3.toFixed(2);
 }
 // ================================================================
 // Задача 0.4 S4=Math.cbrt((a + b) * c)
@@ -37,7 +37,7 @@ function calculateThree() {
 	let a = parseFloat(document.getElementById("a_three").value);
 	let b = parseFloat(document.getElementById("b_three").value);
 	const S4 = Math.sin(a / -b);
-	document.getElementById("resultThree").innerHTML = "S4 = " + S4;
+	document.getElementById("resultThree").innerHTML = "S4 = " + S4.toFixed(2);
 }
 // ================================================================
 // Задача 1. Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
@@ -48,9 +48,9 @@ function calculateTaskOne() {
 	const sum = a + b;
 	const product = a * b;
 	const division = a / b;
-	document.getElementById("sum").innerHTML = sum;
-	document.getElementById("product").innerHTML = product;
-	document.getElementById("division").innerHTML = division;
+	document.getElementById("sum").innerHTML = sum.toFixed(2);
+	document.getElementById("product").innerHTML = product.toFixed(2);
+	document.getElementById("division").innerHTML = division.toFixed(2);
 }
 // ================================================================
 // Задача 2. Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.
