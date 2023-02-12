@@ -31,12 +31,12 @@ function calculateTwo() {
 	document.getElementById("resultTwo").innerHTML = "S3 = " + S3.toFixed(2);
 }
 // ================================================================
-// Задача 0.4 S4 = Math.sin(a / -b)
+// Задача 0.4 S4 = Math.sin(a / (-b))
 // ================================================================
 function calculateThree() {
 	let a = parseFloat(document.getElementById("a_three").value);
 	let b = parseFloat(document.getElementById("b_three").value);
-	const S4 = Math.sin(a / -b);
+	const S4 = Math.sin(a / (-b));
 	document.getElementById("resultThree").innerHTML = "S4 = " + S4.toFixed(2);
 }
 // ================================================================
