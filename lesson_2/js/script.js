@@ -7,8 +7,8 @@
 function calculateSumZero() {
 	let a = parseFloat(document.getElementById("a").value);
 	let b = parseFloat(document.getElementById("b").value);
-	const c = 12;
-	const S1 = a + c + b;
+	const C = 12;
+	const S1 = a + C + b;
 	document.getElementById("resultZero").innerHTML = "S1 = " + S1;
 }
 // ================================================================
@@ -68,8 +68,8 @@ function calculateTaskThree() {
 	let price = parseFloat(document.getElementById("price").value);
 	let quantity = parseFloat(document.getElementById("quantity").value);
 	let totalCost = quantity * price;
-	const minTaxes = 0.05;
-	const taxes = totalCost * minTaxes;
+	const MIN_TAXES = 0.05;
+	const taxes = totalCost * MIN_TAXES;
 	document.getElementById("resultTask3").innerHTML = `Загальна вартість ${totalCost.toFixed(2)}; ПДВ: ${taxes.toFixed(2)}`;
 }
 // ================================================================
