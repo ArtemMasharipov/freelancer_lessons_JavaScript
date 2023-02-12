@@ -31,7 +31,7 @@ function calculateTwo() {
 	document.getElementById("resultTwo").innerHTML = "S3 = " + S3.toFixed(2);
 }
 // ================================================================
-// Задача 0.4 S4=Math.cbrt((a + b) * c)
+// Задача 0.4 S4 = Math.sin(a / -b)
 // ================================================================
 function calculateThree() {
 	let a = parseFloat(document.getElementById("a_three").value);
