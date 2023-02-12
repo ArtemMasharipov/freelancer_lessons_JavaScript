@@ -76,11 +76,12 @@ function calculateTaskThree() {
 // Задача 4. Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
 // ================================================================
 function calculateTaskFour() {
-	let cmLenght = parseFloat(document.getElementById("lenght").value);
-	const meterLenght = cmLenght / 100;
-	const kmLenght = cmLenght / 1e5;
-	document.getElementById("resultTask4").innerHTML = `Довжина в метрах: ${meterLenght.toFixed(3)} м; кілометрах: ${kmLenght.toFixed(5)} км`;
+  const cmLength = parseFloat(document.getElementById("length").value);
+  const meterLength = cmLength / 100;
+  const kmLength = cmLength / 1e5;
+  document.getElementById("resultTask4").innerHTML = `Довжина в метрах: ${meterLength.toFixed(3)} м; кілометрах: ${kmLength.toFixed(5)} км`;
 }
+
 // ================================================================
 // Задача 5. Дано кількість секунд, що пройшла від початку доби. Визначити скільки це годин і хвилин.
 // ================================================================
