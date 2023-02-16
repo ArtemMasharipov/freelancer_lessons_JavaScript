@@ -39,7 +39,6 @@ function buy() {
 		return;
 	} else if (money < productPrice) {
 		resultTaskTwo.innerHTML = "У вас недостатньо грошей для покупки товару";
-		return;
 	} else {
 		const change = money - productPrice;
 		const LOTTERYPRICE = 4;
