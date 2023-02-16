@@ -85,20 +85,23 @@ function checkAge() {
 	const ageInput = parseInt(document.getElementById("ageInput").value);
 	const resultTaskFour = document.getElementById("resultTaskFour");
 
-	if (ageInput >= 0 && ageInput <= 6) {
-		resultTaskFour.innerHTML = "Дитина у садочку";
-	} else if (ageInput >= 7 && ageInput <= 17) {
-		resultTaskFour.innerHTML = "Школяр";
-	} else if (ageInput >= 18 && ageInput <= 24) {
-		resultTaskFour.innerHTML = "Студент";
-	} else if (ageInput >= 25 && ageInput <= 60) {
-		resultTaskFour.innerHTML = "Працівник";
-	} else if (ageInput >= 61 && ageInput <= 120) {
-		resultTaskFour.innerHTML = "Пенсіонер";
-	} else if (ageInput >= 121) {
-		resultTaskFour.innerHTML = "Люди так довго не живуть.";
-	} else {
+	if (isNaN(ageInput) || ageInput <= 0) {
 		resultTaskFour.innerHTML = "Введіть коректний вік.";
+		return;
+	}
+
+	if (ageInput < 6) {
+		resultTaskFour.innerHTML = "Дитина у садочку";
+	} else if (ageInput <= 17) {
+		resultTaskFour.innerHTML = "Школяр";
+	} else if (ageInput <= 24) {
+		resultTaskFour.innerHTML = "Студент";
+	} else if (ageInput <= 60) {
+		resultTaskFour.innerHTML = "Працівник";
+	} else if (ageInput <= 120) {
+		resultTaskFour.innerHTML = "Пенсіонер";
+	} else {
+		resultTaskFour.innerHTML = "Люди так довго не живуть.";
 	}
 }
 // ================================================================
