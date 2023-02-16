@@ -21,7 +21,7 @@ function compareCandyCounts() {
 	} else if (child2CandyCount === child1CandyCount) {
 		resultTaskOfComparing = `У ${child1Name} та ${child2Name} однакова кількість цукерок.`
 	} else {
-		resultTaskOfComparing = "Дані не введено або введено некоректно, відкорегуйте та спробуйте ще раз.";
+		resultTaskOfComparing = "Дані не введено або введено некоректно, відкоригуйте та спробуйте ще раз.";
 	}
 
 	document.getElementById('resultTaskOne').textContent = resultTaskOfComparing;
