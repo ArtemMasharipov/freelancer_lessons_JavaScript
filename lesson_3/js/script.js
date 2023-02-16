@@ -34,7 +34,7 @@ function buy() {
 	let money = parseFloat(document.getElementById("money").value);
 	let resultTaskTwo = document.getElementById("resultTaskTwo");
 
-	if (productPrice <= 0 || money <= 0) {
+	if (productPrice <= 0 || money < 0) {
 		resultTaskTwo.innerHTML = "Значення повинні бути більшими від нуля!";
 		return;
 	} else if (money < productPrice) {
