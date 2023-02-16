@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Lesson 3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>ДЗ. Урок №3. Алгоритми з розгалуженням.</h1>
+		</header>
+		<main class="main">
+			<div class="card-container">
+
+				<div class="card">
+					<h2 class="card__title">Задача 1</h2>
+					<p class="card__description">З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести
+						не екран ім’я тієї дитини, у якої кількість цукерок є більшою, або вивести, що кількість однакова.</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="child1Name" class="card__label">Ім'я першої дитини:</label>
+								<input type="text" id="child1Name" class="card__input">
+							</div>
+							<div class="card__input-group">
+								<label for="child1CandyCount" class="card__label">Кількість цукерок у першої дитини:</label>
+								<input type="number" id="child1CandyCount" class="card__input">
+							</div>
+						</div>
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="child2Name" class="card__label">Ім'я другої дитини:</label>
+								<input type="text" id="child2Name" class="card__input">
+							</div>
+							<div class="card__input-group">
+								<label for="child2CandyCount" class="card__label">Кількість цукерок у другої дитини:</label>
+								<input type="number" id="child2CandyCount" class="card__input">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="compareCandyCounts()" class="card__button">Порівняти</button>
+						<p id="resultTaskOne" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 2</h2>
+					<p class="card__description">З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не
+						вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за
+						4 грн.</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="price">Ціна товару:</label>
+								<input type="number" id="price" name="price" />
+							</div>
+							<div class="card__input-group">
+								<label for="money">Кількість грошей:</label>
+								<input type="number" id="money" name="money" />
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="buy()">Купити</button>
+						<div id="resultTaskTwo" class="card__result"></div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 3</h2>
+					<p class="card__description">Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2
+						спроби.</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="userGuess">Введіть число від 1 до 5:</label>
+								<input type="number" id="userGuess" name="userGuess" />
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="checkGuess()">Вгадати</button>
+						<p id="resultTaskThree" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 4</h2>
+					<p class="card__description">З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у
+						садочку, школярем, студентом, працівником, пенсіонером).</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="ageInput">Введіть вік людини:</label>
+								<input type="number" id="ageInput">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="checkAge()">Визначити</button>
+						<p id="resultTaskFour" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 5</h2>
+					<p class="card__description">З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий
+						автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може
+						керувати.</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="category">Введіть категорію водія A, B, C:</label>
+								<input type="text" id="category" name="category">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="checkCategory()">Перевірити</button>
+						<p id="resultTaskFive" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 6</h2>
+					<p class="card__description">З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="day">Введіть номер дня тижня:</label>
+								<input type="number" id="day">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="showDayName()">Вивести</button>
+						<p id="resultTaskSix" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 7</h2>
+					<p class="card__description">З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="month">Введіть номер місяця:</label>
+								<input type="number" id="month" name="month">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="showMonthSeason()">Вивести</button>
+						<p id="resultTaskSeven" class="card__result"></p>
+					</div>
+				</div>
+				
+			</div>
+		</main>
+		<footer class="footer">
+		</footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
