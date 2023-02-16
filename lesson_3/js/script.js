@@ -52,7 +52,7 @@ function buy() {
 		} else if (money === productPrice) {
 			resultTaskTwo.innerHTML = "Дякую за покупку";
 		} else {
-			resultTaskTwo.innerHTML = "Дані не введено або введено некоректно, відкорегуйте та спробуйте ще раз.";
+			resultTaskTwo.innerHTML = "Дані не введено або введено некоректно, відкоригуйте та спробуйте ще раз.";
 		}
 	}
 }
