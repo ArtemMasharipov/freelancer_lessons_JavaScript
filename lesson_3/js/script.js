@@ -6,23 +6,23 @@
 // цукерок є більшою, або вивести, що кількість однакова.
 // ================================================================
 function compareCandyCounts() {
-    const child1Name = document.getElementById('child1Name').value;
-    const child1CandyCount = parseInt(document.getElementById('child1CandyCount').value);
-    const child2Name = document.getElementById('child2Name').value;
-    const child2CandyCount = parseInt(document.getElementById('child2CandyCount').value);
-    let resultTaskOfComparing = '';
-    if (child1Name === '' || child2Name === '' || child1CandyCount < 0 || child2CandyCount < 0 || isNaN(child1CandyCount) || isNaN(child2CandyCount)) {
-        document.getElementById('resultTaskOne').textContent = "Дані не введено або введено некоректно, відкорегуйте та спробуйте ще раз.";
-        return;
-    } else if (child1CandyCount > child2CandyCount) {
-        resultTaskOfComparing = `${child1Name} має більше цукерок, ніж ${child2Name}`;
-    } else if (child2CandyCount > child1CandyCount) {
-        resultTaskOfComparing = `${child2Name} має більше цукерок, ніж ${child1Name}`;
-    } else {
-        resultTaskOfComparing = `У ${child1Name} та ${child2Name} однакова кількість цукерок.`;
-    }
+	const child1Name = document.getElementById('child1Name').value;
+	const child1CandyCount = parseInt(document.getElementById('child1CandyCount').value);
+	const child2Name = document.getElementById('child2Name').value;
+	const child2CandyCount = parseInt(document.getElementById('child2CandyCount').value);
+	let resultTaskOfComparing = '';
+	if (child1Name === '' || child2Name === '' || child1CandyCount < 0 || child2CandyCount < 0 || isNaN(child1CandyCount) || isNaN(child2CandyCount)) {
+		document.getElementById('resultTaskOne').textContent = "Дані не введено або введено некоректно, відкорегуйте та спробуйте ще раз.";
+		return;
+	} else if (child1CandyCount > child2CandyCount) {
+		resultTaskOfComparing = `${child1Name} має більше цукерок, ніж ${child2Name}`;
+	} else if (child2CandyCount > child1CandyCount) {
+		resultTaskOfComparing = `${child2Name} має більше цукерок, ніж ${child1Name}`;
+	} else {
+		resultTaskOfComparing = `У ${child1Name} та ${child2Name} однакова кількість цукерок.`;
+	}
 
-    document.getElementById('resultTaskOne').textContent = resultTaskOfComparing;
+	document.getElementById('resultTaskOne').textContent = resultTaskOfComparing;
 }
 // ================================================================
 // Задача 2. З клавіатури вводиться ціна товару і кількість грошей. 
