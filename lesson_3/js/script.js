@@ -153,7 +153,7 @@ function showMonthSeason() {
 	const monthNumber = document.getElementById("month").value;
 
 	// визначаємо, до якої пори відноситься введений місяць
-	const season;
+	let season;
 	if (monthNumber == 12 || monthNumber == 1 || monthNumber == 2) {
 		season = "зими";
 	} else if (monthNumber >= 3 && monthNumber <= 5) {
