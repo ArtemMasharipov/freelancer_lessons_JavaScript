@@ -108,6 +108,7 @@ function checkAge() {
 // ================================================================
 function checkCategory() {
 	const categoryInput = document.getElementById("category").value.toUpperCase();
+	const resultTaskFive = document.getElementById("resultTaskFive");
 	let vehicleType;
 
 	if (categoryInput === "A") {
@@ -121,8 +122,7 @@ function checkCategory() {
 		return;
 	}
 
-	const resultElement = document.getElementById("resultTaskFive");
-	resultElement.textContent = `Водій може керувати транспортним засобом: ${vehicleType}.`;
+	resultTaskFive.textContent = `Водій може керувати транспортним засобом: ${vehicleType}.`;
 }
 // ================================================================
 // Задача 6. З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
