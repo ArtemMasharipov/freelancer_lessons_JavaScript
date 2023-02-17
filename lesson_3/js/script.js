@@ -40,8 +40,8 @@ function buy() {
 		resultTaskTwo.innerHTML = "У вас недостатньо грошей для покупки товару";
 	} else {
 		const change = money - productPrice;
-		const LOTTERYPRICE = 4;
-		if (change >= LOTTERYPRICE) {
+		const LOTTERY_PRICE = 4;
+		if (change >= LOTTERY_PRICE) {
 			resultTaskTwo.innerHTML = `Ваша здача:  ${change.toFixed(2)} грн. Хочете купити лотерею за 4 грн?`;
 		} else if (change > 0) {
 			resultTaskTwo.innerHTML = `Ваша здача:  ${change.toFixed(2)} грн. Дякую за покупку`;
