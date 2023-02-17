@@ -164,7 +164,6 @@ function showMonthSeason() {
 		season = "осені";
 	} else {
 		resultTaskSeven.innerHTML = "Некоректне значення.";
-		return;
 	}
 
 	// виводимо результат
