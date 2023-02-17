@@ -132,23 +132,23 @@ function showDayName() {
 	const dayNumber = document.getElementById("day").value;
 
 	// виводимо назву дня тижня на екран
-	const result = document.getElementById("resultTaskSix");
+	const resultTaskSix = document.getElementById("resultTaskSix");
 	if (dayNumber == 1) {
-		result.innerHTML = "Понеділок";
+		resultTaskSix.innerHTML = "Понеділок";
 	} else if (dayNumber == 2) {
-		result.innerHTML = "Вівторок";
+		resultTaskSix.innerHTML = "Вівторок";
 	} else if (dayNumber == 3) {
-		result.innerHTML = "Середа";
+		resultTaskSix.innerHTML = "Середа";
 	} else if (dayNumber == 4) {
-		result.innerHTML = "Четвер";
+		resultTaskSix.innerHTML = "Четвер";
 	} else if (dayNumber == 5) {
-		result.innerHTML = "П'ятниця";
+		resultTaskSix.innerHTML = "П'ятниця";
 	} else if (dayNumber == 6) {
-		result.innerHTML = "Субота";
+		resultTaskSix.innerHTML = "Субота";
 	} else if (dayNumber == 7) {
-		result.innerHTML = "Неділя";
+		resultTaskSix.innerHTML = "Неділя";
 	} else {
-		result.innerHTML = "Невірно введений номер дня тижня";
+		resultTaskSix.innerHTML = "Невірно введений номер дня тижня";
 	}
 }
 // ================================================================
