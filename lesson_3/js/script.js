@@ -81,10 +81,7 @@ function checkAge() {
 
 	if (isNaN(ageInput) || ageInput <= 0) {
 		resultTaskFour.innerHTML = "Введіть коректний вік.";
-		return;
-	}
-
-	if (ageInput < 6) {
+	} else if (ageInput < 6) {
 		resultTaskFour.innerHTML = "Дитина у садочку";
 	} else if (ageInput <= 17) {
 		resultTaskFour.innerHTML = "Школяр";
