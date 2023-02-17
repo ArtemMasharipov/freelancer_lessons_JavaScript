@@ -36,7 +36,6 @@ function buy() {
 
 	if (productPrice <= 0 || money < 0) {
 		resultTaskTwo.innerHTML = "Значення повинні бути більшими від нуля!";
-		return;
 	} else if (money < productPrice) {
 		resultTaskTwo.innerHTML = "У вас недостатньо грошей для покупки товару";
 	} else {
