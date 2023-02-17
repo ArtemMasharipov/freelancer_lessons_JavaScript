@@ -44,7 +44,7 @@ function buy() {
 		if (change >= LOTTERYPRICE) {
 			resultTaskTwo.innerHTML = `Ваша здача:  ${change.toFixed(2)} грн. Хочете купити лотерею за 4 грн?`;
 		} else if (change > 0) {
-			resultTaskTwo.innerHTML = `Ваша здача:  ${change.toFixed(2)} грн.`;
+			resultTaskTwo.innerHTML = `Ваша здача:  ${change.toFixed(2)} грн. Дякую за покупку`;
 		} else if (money === productPrice) {
 			resultTaskTwo.innerHTML = "Дякую за покупку";
 		} else {
