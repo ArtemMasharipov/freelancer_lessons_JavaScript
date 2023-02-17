@@ -151,7 +151,7 @@ function showDayName() {
 function showMonthSeason() {
 	// отримуємо номер місяця з текстового поля
 	const monthNumber = document.getElementById("month").value;
-
+	const resultTaskSeven = document.getElementById("resultTaskSeven");
 	// визначаємо, до якої пори відноситься введений місяць
 	let season;
 	if (monthNumber == 12 || monthNumber == 1 || monthNumber == 2) {
@@ -163,10 +163,10 @@ function showMonthSeason() {
 	} else if (monthNumber >= 9 && monthNumber <= 11) {
 		season = "осені";
 	} else {
-		document.getElementById("resultTaskSeven").innerHTML = "Некоректне значення.";
+		resultTaskSeven.innerHTML = "Некоректне значення.";
 		return;
 	}
 
 	// виводимо результат
-	document.getElementById("resultTaskSeven").innerHTML = "Місяць " + monthNumber + " відноситься до: " + season + ".";
+	resultTaskSeven.innerHTML = "Місяць " + monthNumber + " відноситься до: " + season + ".";
 }
