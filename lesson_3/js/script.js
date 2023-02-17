@@ -62,7 +62,6 @@ function checkGuess() {
 	const resultTaskThree = document.getElementById("resultTaskThree");
 	if (userGuess === randomNumber) {
 		resultTaskThree.innerHTML = "Ви вгадали число!";
-		return;
 	} else {
 		const userGuess2 = parseInt(prompt("Ви не вгадали число, спробуйте ще раз. Введіть число від 1 до 5"));
 		if (userGuess2 === randomNumber) {
