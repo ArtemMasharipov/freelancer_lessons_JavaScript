@@ -152,21 +152,21 @@ function showMonthSeason() {
 	// отримуємо номер місяця з текстового поля
 	const monthNumber = document.getElementById("month").value;
 	const resultTaskSeven = document.getElementById("resultTaskSeven");
-	// визначаємо, до якої пори відноситься введений місяць
+	
 	let season;
-	if (monthNumber == 12 || monthNumber == 1 || monthNumber == 2) {
-		season = "зими";
-	} else if (monthNumber >= 3 && monthNumber <= 5) {
-		season = "весни";
-	} else if (monthNumber >= 6 && monthNumber <= 8) {
-		season = "літа";
-	} else if (monthNumber >= 9 && monthNumber <= 11) {
-		season = "осені";
-	} else {
+	if (monthNumber < 1 || monthNumber > 12) {
 		resultTaskSeven.innerHTML = "Некоректне значення.";
 		return;
+	}else if (monthNumber <= 2 || monthNumber == 12) {
+		season = "зими";
+	} else if (monthNumber <= 5) {
+		season = "весни";
+	} else if (monthNumber <= 8) {
+		season = "літа";
+	} else {
+		season = "осені";
 	}
 
 	// виводимо результат
-	resultTaskSeven.innerHTML = "Місяць " + monthNumber + " відноситься до: " + season + ".";
+	resultTaskSeven.innerHTML = `Місяць ${monthNumber} відноситься до: ${season}`;
 }
