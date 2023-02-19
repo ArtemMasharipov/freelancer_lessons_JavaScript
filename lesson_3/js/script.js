@@ -37,11 +37,16 @@ function buy() {
 	if (productPrice <= 0 || money < 0) {
 		resultTaskTwo.innerHTML = "Значення повинні бути більшими від нуля!";
 	} else if (money < productPrice) {
-		resultTaskTwo.innerHTML = "У вас недостатньо грошей для покупки товару";
+		const LOTTERYPRICE = 4;
+		if (money >= LOTTERYPRICE) {
+			resultTaskTwo.innerHTML = `У вас недостатньо грошей для покупки товару. Хочете купити лотерею за 4 грн?`;
+		} else {
+			resultTaskTwo.innerHTML = "У вас недостатньо грошей для покупки.";
+		}
 	} else {
 		const change = money - productPrice;
-		const LOTTERY_PRICE = 4;
-		if (change >= LOTTERY_PRICE) {
+		const LOTTERYPRICE = 4;
+		if (change >= LOTTERYPRICE) {
 			resultTaskTwo.innerHTML = `Ваша здача:  ${change.toFixed(2)} грн. Хочете купити лотерею за 4 грн?`;
 		} else if (change > 0) {
 			resultTaskTwo.innerHTML = `Ваша здача:  ${change.toFixed(2)} грн. Дякую за покупку`;
