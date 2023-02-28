@@ -105,7 +105,7 @@ for (let k = 0; k < 3; k++) {
 			const cellTaskSix = document.createElement("td");
 			cellTaskSix.textContent = cellNumber;
 			cellTaskSix.style.border = "2px solid black";
-			cellTaskSix.style.padding = "10px";
+			cellTaskSix.style.padding = "8px";
 			rowTaskSix.appendChild(cellTaskSix);
 		}
 	}
