@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Lesson 5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>ДЗ. Урок №5. Цикли.</h1>
+		</header>
+		<main class="main">
+			<div class="card-container">
+				<div class="card">
+					<h2 class="card__title">Задача 1</h2>
+					<p class="card__description">
+						Вивести з використанням циклів маркований список з випадковими
+						числами (1-100). Кількість випадкових чисел вводиться
+						користувачем.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="userNum">Введіть кількість випадкових чисел:</label>
+								<input type="number" id="userNum" />
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button id="generateButton">Генерувати</button>
+						<ul id="randomList" class="card__result"></ul>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 2</h2>
+					<p class="card__description">
+						Створити 10 елементів для введення цін продуктів
+					</p>
+					<div class="card__input-container"></div>
+					<div class="task-submit">
+						<div id="productsList"></div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 3</h2>
+					<p class="card__description">
+						Вивести таблицю з одним рядком і 7 стовпцями.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column"></div>
+					</div>
+					<div class="task-submit">
+						<table id="taskThreeTable">
+							<tr></tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 4</h2>
+					<p class="card__description">
+						Вивести таблицю з 3 рядків і 7 стовпців
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column"></div>
+					</div>
+					<div class="task-submit">
+						<table id="taskFourTable"></table>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 5</h2>
+					<p class="card__description">
+						Вивести таблицю 3*3 з комірками від 1 до 9.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column"></div>
+					</div>
+					<div class="task-submit">
+						<table id="taskFiveTable"></table>
+					</div>
+				</div>
+
+
+				<div class="card">
+					<h2 class="card__title">Задача 6</h2>
+					<p class="card__description">
+						Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column"></div>
+					</div>
+					<div class="task-submit">
+						<div id="tableContainer"></div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 7</h2>
+					<p class="card__description">
+						Вивести на екран N абзаців (N вводиться користувачем).
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="inputN">Введіть кількість абзаців:</label>
+								<input type="number" id="inputN" name="inputN" min="1">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="generateParagraphs()">Створити абзаци</button>
+						<div id="paragraphsContainer" class="card__result"></div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 8</h2>
+					<p class="card__description">
+						Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число користувача.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="userNumber">Введіть додатнє число і натисніть кнопку "Вгадати":</label>
+								<input type="number" id="userNumber" name="userNumber" value="0">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="guessNumber()">Вгадати</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 9</h2>
+					<p class="card__description">
+						Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати
+						confirm).
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="userNumber">Введіть додатнє число і натисніть кнопку "Вгадати":</label>
+								<input type="number" id="userNumberTwo" name="userNumberTwo" value="0">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="guessNumberTwo()">Вгадати</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 10</h2>
+					<p class="card__description">
+						Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="firstUserNumber">Введіть перше число:</label>
+								<input type="number" id="firstUserNumber" name="firstUserNumber" value="1">
+								<br>
+								<label for="secondtUserNumber">Введіть друге число:</label>
+								<input type="number" id="secondtUserNumber" name="secondtUserNumber" value="5">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="sumOddNumbers()">Знайти суму</button>
+						<p id="taskTenResult" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 11</h2>
+					<p class="card__description">
+						Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="firstUserNumberTask_11">Введіть перше число:</label>
+								<input type="number" id="firstUserNumberTask_11" name="firstUserNumberTask_11" value="1">
+								<br>
+								<label for="secondtUserNumberTask_11">Введіть друге число:</label>
+								<input type="number" id="secondtUserNumberTask_11" name="secondtUserNumberTask_11" value="9">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="sumOddFive()">Знайти суму</button>
+						<p id="taskElevenResult" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 12</h2>
+					<p class="card__description">
+						Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як
+						одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших
+						зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн).
+						Використати цикли і switch (для вибору зображення за номером).
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<div id="images" class="card__result"></div>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="location.reload()">Грати</button>
+						<div id="taskTwelveResult"></div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 13</h2>
+					<p class="card__description">
+						Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів
+						користувач намагається потопити корабель.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<form>
+									<div class="card__input-label">
+										<label for="boardWidth">Введіть кількість клітинок у стовбці (N):</label>
+										<input type="number" id="boardWidth" name="boardWidth" value="1">
+									</div>
+
+									<div class="card__input-label">
+										<label for="boardHeight">Введіть кількість клітинок у рядку (M):</label>
+										<input type="number" id="boardHeight" name="boardHeight" value="1">
+									</div>
+
+									<div class="card__input-label">
+										<label for="numProjectiles">Введіть кількість снарядів:</label>
+										<input type="number" id="numProjectiles" name="projectileUserInput" value="1">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button type="button" onclick="playBattleship()">Почати гру</button>
+						<p id="battleShipResult" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 14</h2>
+					<p class="card__description">
+						Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей
+						до тих пір, поки суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку
+						ще суму потрібно ввести).
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<form>
+									<div class="card__input-label">
+										<label for="totalAmount">Введіть суму до оплати:</label>
+										<input type="number" id="totalAmount" name="totalAmount" value="1">
+									</div>
+									<div class="card__input-label">
+										<label for="paidAmount">Введіть суму, яку ви оплатили:</label>
+										<input type="number" id="paidAmount" name="paidAmount" value="1">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="makePayment()">Заплатити</button>
+						<p id="remainingAmount" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 15</h2>
+					<p class="card__description">
+						Користувач поступово вводить показники температури протягом року. Знайти середню температуру.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="temperatureInput">Введіть показник температури:</label>
+								<input type="number" id="temperatureInput" name="temperatureInput" value="0">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="calculateAverageTemperature()">Обчислити</button>
+						<p id="averageTemperatureResult" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 16</h2>
+					<p class="card__description">
+						Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів. Знайти загальну
+						величину прибутку та вивести величину прибутку протягом кожного окремого тижня.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="weeks">Введіть кількість тижнів для обрахунку:</label>
+								<input type="number" id="weeks" name="weeks" value="0">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="calculateProfit()">Обчислити</button>
+						<div class="task-submit__result card__result">
+							<div id="week-profits"></div>
+							<div id="total-profit"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
