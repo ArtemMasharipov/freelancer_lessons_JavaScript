@@ -272,7 +272,7 @@ const imagesContainer = document.getElementById("images");
 function createAndAppendFruitImage(imagesContainer) {
 	const randomFruitNumber = 1 + Math.floor(Math.random() * 4);
 	const fruitImg = document.createElement("img");
-	fruitImg.src = `../img/fruit${randomFruitNumber}.jpg`;
+	fruitImg.src = `./img/fruit${randomFruitNumber}.jpg`;
 	imagesContainer.appendChild(fruitImg);
 	return randomFruitNumber;
 }
