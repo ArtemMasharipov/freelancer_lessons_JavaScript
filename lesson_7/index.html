@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Lesson 7</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>ДЗ. Урок №7. Функції.</h1>
+		</header>
+		<main class="main">
+			<div class="card-container">
+
+				<div class="card">
+					<h2 class="card__title">Задача 0</h2>
+					<p class="card__description">Створити функцію, яка за номером місяця повертає пору року, до якої
+						відноситься цей місяць.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="month">Введіть номер місяця:</label>
+								<input type="number" id="month" name="month" value="1" min="1" max="12">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="showMonthSeason()">Вивести</button>
+						<p id="resultTaskZero" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 1</h2>
+					<p class="card__description">Створити функцію, яка за номером місяця повертає його назву.</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="monthNumber">Введіть номер місяця:</label>
+								<input type="number" id="monthNumber" name="monthNumber" min="1" max="12" value="1">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="showMonthName()">Вивести</button>
+						<p id="resultTaskOne" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 2</h2>
+					<p class="card__description">Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день
+						робочим.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="dayNumber">Введіть номер дня від 1 до 7:</label>
+								<input type="number" id="dayNumber" name="dayNumber" min="1" max="7" value="1">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="isWorkingDay()">Вивести</button>
+						<p id="resultTaskTwo" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 3</h2>
+					<p class="card__description">Створити окремі функції, які для 4 чисел знаходять:<br>
+						1)суму;<br>
+						2)добуток;<br>
+						3)середнє арифметичне;<br>
+						4)мінімальне значення.<br>
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<form>
+									<div class="card__input-label">
+										<label for="num1">Число 1:</label>
+										<input type="number" id="num1" name="num1" value="1">
+									</div>
+									<div class="card__input-label">
+										<label for="num2">Число 2:</label>
+										<input type="number" id="num2" name="num2" value="2">
+									</div>
+									<div class="card__input-label">
+										<label for="num3">Число 3:</label>
+										<input type="number" id="num3" name="num3" value="3">
+									</div>
+									<div class="card__input-label">
+										<label for="num4">Число 4:</label>
+										<input type="number" id="num4" name="num4" value="4">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="calculateTaskThree()">Обчислити</button>
+						<div class="card__result">
+							<p id="result_sum"></p>
+							<p id="result_product"></p>
+							<p id="result_average"></p>
+							<p id="result_min"></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 4</h2>
+					<p class="card__description">Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька
+						результатів: кількість парних, кількість додатних, кількість більших за 100.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<form>
+									<div class="card__input-label">
+										<label for="taskFourNum1">Число 1:</label>
+										<input type="number" id="taskFourNum1" name="taskFourNum1" value="1">
+									</div>
+									<div class="card__input-label">
+										<label for="taskFourNum2">Число 2:</label>
+										<input type="number" id="taskFourNum2" name="taskFourNum2" value="2">
+									</div>
+									<div class="card__input-label">
+										<label for="taskFourNum3">Число 3:</label>
+										<input type="number" id="taskFourNum3" name="taskFourNum3" value="101">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="calculateTaskFour()">Обчислити</button>
+						<div class="card__result">
+							<div id="calculateThreeOperations"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 5</h2>
+					<p class="card__description">Створити окремі функції, які переводять:<br>
+						1)Сантиметри у дюйми;;<br>
+						2)Кілограми у фунти;<br>
+						3)Кілометри у милі.<br>
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<form class="card__task-five">
+									<div class="card__input-label">
+										<label for="cmInput">Введіть довжину в сантиметрах:</label>
+										<input type="number" id="cmInput" value="1">
+										<p id="inchOutput" class="card__result"></p><br>
+										<button type="button" onclick="convertCmToInch()">Перевести у дюйми</button>
+									</div>
+									<div class="card__input-label">
+										<label for="kgInput">Введіть масу в кілограмах:</label>
+										<input type="number" id="kgInput" value="1">
+										<p id="lbOutput" class="card__result"></p><br>
+										<button type="button" onclick="convertKgToLbs()">Перевести у фунти</button>
+									</div>
+									<div class="card__input-label">
+										<label for="kmInput">Введіть відстань в кілометрах:</label>
+										<input type="number" id="kmInput" value="1">
+										<p id="mileOutput" class="card__result"></p><br>
+										<button type="button" onclick="convertKmToMiles()">Перевести у милі</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 6</h2>
+					<p class="card__description">Створити функцію, яка створює таблицю з вказаною кількістю рядків
+						і стовпців (таблиця заповнюється заданим фіксованим повідомленням).</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="rowsInput">Кількість рядків:</label>
+								<input type="number" id="rowsInput" min="1" value="4">
+							</div>
+							<div class="card__input-group">
+								<label for="colsInput">Кількість стовпців:</label>
+								<input type="number" id="colsInput" min="1" value="5">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button type="button" onclick="handleTableCreation()">Створити таблицю</button>
+						<div id="table-container"></div>
+					</div>
+				</div>
+
+
+
+				<div class="card">
+					<h2 class="card__title">Задача 7</h2>
+					<p class="card__description">
+						Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень
+						передаються у функцію)
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<div id="images" class="card__result"></div>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="location.reload()">Вивести</button>
+						<div id="images-container"></div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 8</h2>
+					<p class="card__description">
+						Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди
+						переходимо при кліку на зображення (тег img повине знаходитись у середині тега a).
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group" id="banner-container">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 9</h2>
+					<p class="card__description">
+						Дано покази температур (довільна кількість). Розробити функцію, яка дозволить підрахувати кількість
+						від’ємних показів температури.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="temperatureInput">Введіть показник температури:</label>
+								<input type="number" id="temperatureInput" name="temperatureInput" value="0">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="countTemperatures()">Обчислити</button>
+						<p id="negativeTemperatureResult" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 10</h2>
+					<p class="card__description">
+						Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення
+						для додатних показів температури.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="temperatureInputTaskTen">Введіть показник температури:</label>
+								<input type="number" id="temperatureInputTaskTen" name="temperatureInputTaskTen" value="0">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="calculateAverageTemperature()">Обчислити</button>
+						<p id="averageTemperatureResult" class="card__result"></p>
+					</div>
+				</div>
+
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
