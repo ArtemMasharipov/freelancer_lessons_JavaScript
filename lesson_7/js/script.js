@@ -258,10 +258,10 @@ function createBanner(imagePath, title, link) {
 
 	// Встановлення атрибутів для тегів <a> та <img>
 	linkElement.href = link;
-	linkElement.target = "_blank";
 	imageElement.src = imagePath;
-	// Додавання атрибуту target
 	imageElement.alt = "Codepen banner";
+	// Додавання атрибуту target
+	linkElement.target = "_blank";
 	// Додавання тега <img> до тега <a>
 	linkElement.appendChild(imageElement);
 
