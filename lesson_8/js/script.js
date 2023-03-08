@@ -461,7 +461,7 @@ function addToSum() {
 // ================================================================
 // Запитуємо у користувача розмір масиву та кількість кораблів
 function getGridSize() {
-	return parseInt(prompt("Введіть розмір масиву:"));
+	return parseInt(prompt("Введіть клітинок одновимірного масиву:"));
 }
 
 function getNumOfShips() {
