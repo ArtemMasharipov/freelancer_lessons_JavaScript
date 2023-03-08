@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Lesson 8</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>ДЗ. Урок №8. Масиви - вступ</h1>
+		</header>
+		<main class="main">
+			<div class="card-container">
+
+				<div class="card">
+					<h2 class="card__title">Задача 1</h2>
+					<p class="card__description">Дано масив, який містить оцінки з К предметів. Знайти середній бал і
+						з’ясувати до якої категорії він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист
+						(оцінки добре і відмінно), трійочник(є хоча би одна трійка)).
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="numOfGrades">Введіть значення K для обчислення:</label>
+								<input type="number" id="numOfGrades" name="numOfGrades" value="5">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="generateAndDisplayGrades()">Визначити</button>
+						<p id="resultTaskZero" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 2</h2>
+					<p class="card__description">
+						Дано масив, який зберігає кількість відвідувачів магазину протягом тижня.<br><br> Вивести на
+						екран:<br><br>
+						- номери днів, протягом яких кількість відвідувачів була меншою за 20;<br>
+						- номери днів, коли кількість відвідувачів була мінімальною;<br>
+						- номери днів, коли кількість відвідувачів була максимальною;<br>
+						- загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="location.reload()">Вивести</button>
+						<p id="resultTaskTwo" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 3</h2>
+					<p class="card__description">
+						Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="location.reload()">Вивести</button>
+						<p id="resultTaskThree" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 4</h2>
+					<p class="card__description">
+						Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :<br><br>
+						• починаються на букву «А»;<br>
+						• перша і остання літери співпадають;<br>
+						• складаються з більше ніш 5 символів;
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<p id="resultTaskFour" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 5</h2>
+					<p class="card__description">
+						Дано послідовність оцінок учня. Підрахувати кількість:<br><br>
+						1. двійок<br>
+						2. кількість хороших оцінок (добре, відмінно);<br>
+						3. кількість оцінок, які нижче середнього.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="location.reload()">Вивести</button>
+						<p id="resultTaskFive" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 6</h2>
+					<p class="card__description">
+						Дано послідовність цін товарів та назв (у окремих масивах).
+						Вивести на екран ті, які може
+						собі дозволити користувач (кількість грошей задається).
+						Приклад збереження даних
+						let productsPrices = [1000, 20, 31]
+						let productsTitles = [‘cheese’, ‘juice’, ‘bread’].
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="location.reload()">Вивести</button>
+						<p id="resultTaskSix" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 7</h2>
+					<p class="card__description">
+						Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:<br>
+						- за весь рік;<br>
+						- у першій половині року;<br>
+						- у другій половині року;<br>
+						- за літо;<br>
+						- за ІІ квартал;<br>
+						- за парні місяці (з парними номерами);<br>
+						- за місяці, які є початковими у сезоні (весна, літо, осінь, зима).<br>
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="location.reload()">Вивести</button>
+						<p id="resultTaskSeven" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 8</h2>
+					<p class="card__description">
+						Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим
+						чином значеннями від -500 до 500). Надаючи користувачу можливість вибирати номери елементів (поки він
+						не відмовиться). Знаходити сумарний виграш.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<form id="inputForm">
+									<label for="inputGameNumber">Введіть номер елементу (від 1 до 50):</label>
+									<input type="number" id="inputGameNumber" name="inputGameNumber" min="1" max="50" value="1">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<div class="task-submit__button">
+							<button onclick="addToSum()">Спробувати</button>
+							<button onclick="location.reload()">Спочатку</button>
+						</div>
+						<p id="resultTaskEight" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 9</h2>
+					<p class="card__description">
+						Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних
+						кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці
+						0, то клітинка пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки,
+						куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі кораблі
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="playGame()">Грати</button>
+						<p id="resultTaskNine" class="card__result"></p>
+					</div>
+				</div>
+
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
