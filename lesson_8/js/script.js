@@ -148,6 +148,15 @@ document.getElementById("resultTaskTwo").innerHTML = resultTaskTwo;
 // зустрічається ім’я «Іван».
 // ================================================================
 
+function generateRandomNamesArray(possibleNames) {
+	const namesArray = [];
+	for (let i = 0; i < possibleNames.length; i++) {
+		const randomIndex = Math.floor(Math.random() * possibleNames.length);
+		namesArray.push(possibleNames[randomIndex]);
+	}
+	return namesArray;
+}
+
 function countOccurrencesOfName(namesArray, matchingName) {
 	let count = 0;
 	for (let i = 0; i < namesArray.length; i++) {
@@ -158,19 +167,13 @@ function countOccurrencesOfName(namesArray, matchingName) {
 	return count;
 }
 
-let namesArray = [];
-let possibleNames = ["Іван", "Олександр", "Андрій", "Олена", "Ірина", "Марія", "Анна", "Юлія", "Оксана", "Наталія"];
-
-for (let i = 0; i < possibleNames.length; i++) {
-	let randomIndexOfPossibleNames = Math.floor(Math.random() * possibleNames.length);
-	namesArray.push(possibleNames[randomIndexOfPossibleNames]);
-}
-
-let countOfIvanOccurrences = countOccurrencesOfName(namesArray, "Іван");
-
-let resultTaskThree = `Масив імен: [${namesArray.join(", ")}]<br><br> Кількість входжень імені "Іван": ${countOfIvanOccurrences}`;
+const possibleNames = ["Іван", "Олександр", "Андрій", "Олена", "Ірина", "Марія", "Анна", "Юлія", "Оксана", "Наталія"];
+const namesArray = generateRandomNamesArray(possibleNames);
+const countOfIvanOccurrences = countOccurrencesOfName(namesArray, "Іван");
+const resultTaskThree = `Масив імен: [${namesArray.join(", ")}]<br><br> Кількість входжень імені "Іван": ${countOfIvanOccurrences}`;
 
 document.getElementById("resultTaskThree").innerHTML = resultTaskThree;
+
 // ================================================================
 // Задача 4. Дано послідовність номерів автомобілів. Підрахувати 
 // кількість номерів, які :
