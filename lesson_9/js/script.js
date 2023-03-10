@@ -14,6 +14,7 @@ function getArrayFilledByZeros() {
 // 2. Користувач вводить кількість елементів. Створити масив, у
 // якому перша половина заповнена 1-цями, а друга заповнена 7-ками.
 // ================================================================
+
 function getArrayFilledByOnesAndSevensTwoHalfs() {
 	const quantityArraysElems = parseInt(prompt('Введіть кількість елементів:'));
 
