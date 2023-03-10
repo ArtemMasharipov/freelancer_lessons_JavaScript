@@ -14,7 +14,6 @@ function getArrayFilledByZeros() {
 // 2. Користувач вводить кількість елементів. Створити масив, у
 // якому перша половина заповнена 1-цями, а друга заповнена 7-ками.
 // ================================================================
-
 function getArrayFilledByOnesAndSevensTwoHalfs() {
 	const quantityArraysElems = parseInt(prompt('Введіть кількість елементів:'));
 
@@ -25,6 +24,7 @@ function getArrayFilledByOnesAndSevensTwoHalfs() {
 	const arrayFilledByOnesAndSevens = new Array(quantityArraysElems);
 	arrayFilledByOnesAndSevens.fill(1, 0, halfquantityArraysElems).fill(7, halfquantityArraysElems);
 
+	// Виводимо масив в консоль
 	console.log(arrayFilledByOnesAndSevens);
 }
 // ================================================================
@@ -39,6 +39,7 @@ function createArrayFilledByOnesAndSevens() {
 	const arrayFilledByOnesAndSevens = new Array(quantityArraysElems);
 	arrayFilledByOnesAndSevens.fill(1, 0, 5).fill(7, 5);
 
+	// Виводимо масив в консоль
 	console.log(arrayFilledByOnesAndSevens);
 }
 // ================================================================
@@ -150,7 +151,7 @@ console.log(resultArrayTaskNine);
 // ================================================================
 
 function getArrayWithPricesMinusTaxes(array) {
-	const TAXES = 0.8;
+	const TAXES = 0.2;
 	const arrayOfPricesMinusTaxes = array.map(element => element * TAXES);
 
 	return arrayOfPricesMinusTaxes;
