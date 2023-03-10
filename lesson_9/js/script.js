@@ -25,7 +25,6 @@ function getArrayFilledByOnesAndSevensTwoHalfs() {
 	const arrayFilledByOnesAndSevens = new Array(quantityArraysElems);
 	arrayFilledByOnesAndSevens.fill(1, 0, halfquantityArraysElems).fill(7, halfquantityArraysElems);
 
-	// Виводимо масив в консоль
 	console.log(arrayFilledByOnesAndSevens);
 }
 // ================================================================
@@ -40,7 +39,6 @@ function createArrayFilledByOnesAndSevens() {
 	const arrayFilledByOnesAndSevens = new Array(quantityArraysElems);
 	arrayFilledByOnesAndSevens.fill(1, 0, 5).fill(7, 5);
 
-	// Виводимо масив в консоль
 	console.log(arrayFilledByOnesAndSevens);
 }
 // ================================================================
