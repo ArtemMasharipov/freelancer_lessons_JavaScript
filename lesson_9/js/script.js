@@ -37,7 +37,7 @@ function createArrayFilledByOnesAndSevens() {
 	const quantityArraysElems = parseInt(prompt('Введіть кількість елементів:'));
 
 	const arrayFilledByOnesAndSevens = new Array(quantityArraysElems);
-	arrayFilledByOnesAndSevens.fill(1).fill(7, 5);
+	arrayFilledByOnesAndSevens.fill(1, 0, 5).fill(7, 5);
 
 	// Виводимо масив в консоль
 	console.log(arrayFilledByOnesAndSevens);
