@@ -46,15 +46,19 @@ function hasThrees(grades) {
 }
 
 function calculateResult(grades) {
+	let result;
+
 	if (hasOnesOrTwos(grades)) {
-		return "Двійочник";
+		result = "Двійочник";
 	} else if (hasThrees(grades)) {
-		return "Трійочник";
+		result = "Трійочник";
 	} else if (calculateAverageGrade(grades) >= 4 && calculateAverageGrade(grades) < 4.5) {
-		return "Хорошист";
+		result = "Хорошист";
 	} else if (calculateAverageGrade(grades) >= 4.5) {
-		return "Відмінник";
+		result = "Відмінник";
 	}
+
+	return result;
 }
 
 function generateAndDisplayGrades() {
