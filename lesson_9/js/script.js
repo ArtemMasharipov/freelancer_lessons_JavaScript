@@ -1,4 +1,4 @@
-//Homework_lesson_8. Arrays. Continuation.
+//Homework_lesson_9. Arrays. Continuation.
 "use strict";
 // ================================================================
 // 1. Користувач вводить кількість елементів. Створити масив, що 
