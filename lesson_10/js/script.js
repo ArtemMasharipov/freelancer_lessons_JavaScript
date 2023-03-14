@@ -105,7 +105,7 @@ console.log(numberOfPricesGreaterThan1000);
 // ================================================================
 
 const sumOfPricesGreaterThan1000 = historyOfPricesArray.reduce((sumOfPrices, price) =>
-	price > 1000 ? sumOfPrices += price : sumOfPrices, 0);
+	price > 1000 ? sumOfPrices + price : sumOfPrices, 0);
 console.log(sumOfPricesGreaterThan1000);
 
 // ================================================================
