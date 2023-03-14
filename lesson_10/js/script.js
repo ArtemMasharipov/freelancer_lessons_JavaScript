@@ -27,8 +27,8 @@ console.log(historyOfPricesArray);
 // що більші за 1000 грн.
 // ================================================================
 
-const historyOfPricesGreaterThan1000Array = historyOfPricesArray.filter(Element => Element > 1000);
-console.log(historyOfPricesGreaterThan1000Array);
+const lastIndexOfPriceGreaterThan1000 = historyOfPricesArray.findLastIndex(price => price > 1000);
+console.log(lastIndexOfPriceGreaterThan1000);
 
 // ================================================================
 // 2)Сформувати новий масив, у якому є номери тільки тих, 
