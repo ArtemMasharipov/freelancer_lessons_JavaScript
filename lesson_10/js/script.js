@@ -125,8 +125,11 @@ console.log(firstIndexGreaterThan1000);
 // 12)Знайти останню ціну, що більше за 1000
 // ================================================================
 
-const lastPriceGreaterThan1000 = historyOfPricesArray.filter(price => price > 1000).pop();
+const lastPriceGreaterThan1000 = historyOfPricesArray.findLast(price => price > 1000);
 console.log(lastPriceGreaterThan1000);
+
+// const lastPriceGreaterThan1000 = historyOfPricesArray.filter(price => price > 1000).pop();
+// console.log(lastPriceGreaterThan1000);
 
 // ================================================================
 // 13)Знайти індекс останньої ціни, що більше за 1000
