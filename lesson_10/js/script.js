@@ -105,7 +105,7 @@ console.log(numberOfPricesGreaterThan1000);
 // ================================================================
 
 const sumOfPricesGreaterThan1000 = historyOfPricesArray.reduce((sumOfPrices, price) =>
-	price > 1000 ? sumOfPrices += price : sumOfPrices, 0);
+	price > 1000 ? sumOfPrices + price : sumOfPrices, 0);
 console.log(sumOfPricesGreaterThan1000);
 
 // ================================================================
@@ -125,7 +125,7 @@ console.log(firstIndexGreaterThan1000);
 // 12)Знайти останню ціну, що більше за 1000
 // ================================================================
 
-const lastPriceGreaterThan1000 = historyOfPricesArray.filter(price => price > 1000).pop();
+const lastPriceGreaterThan1000 = historyOfPricesArray.findLast(element=>element>1000);
 console.log(lastPriceGreaterThan1000);
 
 // ================================================================
