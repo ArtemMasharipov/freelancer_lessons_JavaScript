@@ -84,9 +84,9 @@ console.log(productPositiveElements);
 function getMultipliedElementsByTwoIfGreaterThanFirstElement(array) {
 	const firstElement = array[0];
 
-	array.forEach((element, index) => {
+	array.forEach((element, index, arrRef) => {
 		if (element > firstElement) {
-			array[index] = element * 2;
+			arrRef[index] = element * 2;
 		}
 	});
 
@@ -104,9 +104,9 @@ console.log(resultArrayTaskSix);
 function getDiscountForArraysElementsGreaterThan1000(array) {
 	const DISCOUNT = 0.7;
 
-	array.forEach((element, index) => {
+	array.forEach((element, index, arrRef) => {
 		if (element > 1000) {
-			array[index] = element * DISCOUNT;
+			arrRef[index] = element * DISCOUNT;
 		}
 	});
 
