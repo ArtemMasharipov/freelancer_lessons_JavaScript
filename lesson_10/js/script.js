@@ -36,10 +36,10 @@ console.log(historyOfPricesGreaterThan1000Array);
 // ================================================================
 
 const indexesOfPricesGreaterThan1000 = historyOfPricesArray.reduce((acc, element, index) => {
-  if (element > 1000) {
-    acc.push(index);
-  }
-  return acc;
+	if (element > 1000) {
+		acc.push(index);
+	}
+	return acc;
 }, []);
 
 console.log(indexesOfPricesGreaterThan1000);
@@ -49,20 +49,19 @@ console.log(indexesOfPricesGreaterThan1000);
 // ================================================================
 
 function getListOfPricesHigherThanPrevious(historyOfPricesArray) {
-  let prevValue;
-  return historyOfPricesArray.reduce((acc, currentValue) => {
-    if (typeof prevValue !== 'undefined' && currentValue > prevValue) {
-      acc.push(currentValue);
-    }
-    prevValue = currentValue;
-    return acc;
-  }, []);
+	let prevValue;
+	const pricesHigherThanPrevious = [];
+	for (const currentValue of historyOfPricesArray) {
+		if (typeof prevValue !== 'undefined' && currentValue > prevValue) {
+			pricesHigherThanPrevious.push(currentValue);
+		}
+		prevValue = currentValue;
+	}
+	return pricesHigherThanPrevious;
 }
 
 const listOfPricesHigherThanPrevious = getListOfPricesHigherThanPrevious(historyOfPricesArray);
-
 console.log(listOfPricesHigherThanPrevious);
-
 
 // ================================================================
 // 4)Сформувати новий масив, що міститиме значення цін у відсотках 
@@ -138,7 +137,7 @@ console.log(firstIndexGreaterThan1000);
 // 12)Знайти останню ціну, що більше за 1000
 // ================================================================
 
-const lastPriceGreaterThan1000 = historyOfPricesArray.findLast(element=>element>1000);
+const lastPriceGreaterThan1000 = historyOfPricesArray.findLast(element => element > 1000);
 console.log(lastPriceGreaterThan1000);
 
 // ================================================================
