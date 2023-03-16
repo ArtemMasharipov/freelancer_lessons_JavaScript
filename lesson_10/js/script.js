@@ -35,9 +35,12 @@ console.log(historyOfPricesGreaterThan1000Array);
 // що більші за 1000 грн.
 // ================================================================
 
-const indexesOfPricesGreaterThan1000 = historyOfPricesArray.reduce((acc, element, index) =>
-	element > 1000 ? [...acc, index] : acc, []
-);
+const indexesOfPricesGreaterThan1000 = historyOfPricesArray.reduce((acc, element, index) => {
+  if (element > 1000) {
+    acc.push(index);
+  }
+  return acc;
+}, []);
 
 console.log(indexesOfPricesGreaterThan1000);
 
@@ -45,11 +48,21 @@ console.log(indexesOfPricesGreaterThan1000);
 // 3)Сформувати список з тих цін, які більші за попереднє значення
 // ================================================================
 
-const listOfPricesHigherThanPrevious = historyOfPricesArray.reduce((acc, currentValue, index, arr) =>
-	(currentValue > arr[index - 1]) ? [...acc, currentValue] : acc, []
-);
+function getListOfPricesHigherThanPrevious(historyOfPricesArray) {
+  let prevValue;
+  return historyOfPricesArray.reduce((acc, currentValue) => {
+    if (typeof prevValue !== 'undefined' && currentValue > prevValue) {
+      acc.push(currentValue);
+    }
+    prevValue = currentValue;
+    return acc;
+  }, []);
+}
+
+const listOfPricesHigherThanPrevious = getListOfPricesHigherThanPrevious(historyOfPricesArray);
 
 console.log(listOfPricesHigherThanPrevious);
+
 
 // ================================================================
 // 4)Сформувати новий масив, що міститиме значення цін у відсотках 
