@@ -17,7 +17,6 @@ const thirtyRandomNumbersArray = generateRandomNumbers();
 console.log("Тестовий масив");
 console.log(thirtyRandomNumbersArray);
 // ================================================================
-
 function getBubbleSortedArray(array) {
 	let swapped;
 	let counterSwapping = 0;
@@ -123,7 +122,6 @@ function getInsertionSortedArray(array) {
 const insertionSortedArray = getInsertionSortedArray(thirtyRandomNumbersArray);
 console.log("Сортування включенням");
 console.log(insertionSortedArray);
-
 // ================================================================
 // ==========Задачу реалізовано у попередніх функціях.=============
 // Задача 4. Для розглянутих методів сортування спробувати вивести
