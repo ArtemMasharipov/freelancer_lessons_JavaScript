@@ -167,7 +167,7 @@ const sortedNamesTaskFive = insertionSort(namesArrayTaskFive);
 console.log("Масив відсортовано методом вставки")
 console.log(sortedNamesTaskFive);
 const index = binarySearch(sortedNamesTaskFive, "Olga");
-console.log(`Ім'я Olga знаходисться під індексом: ${index}`);
+console.log(`Ім'я Olga знаходиться під індексом: ${index}`);
 // ================================================================
 // Задача 6. Дано масив імен. Застосовуючи відповідне сортування та 
 // бінарний пошук визначити, чи є у масиві ім’я довжиною 5 символів 
@@ -194,5 +194,5 @@ const sortedNamesTaskSix = insertionSort(namesArrayTaskSix);
 console.log("Масив відсортовано методом вставки")
 console.log(sortedNamesTaskSix);
 const nameIndexWithMatchingLength = binarySearchNameWithMatchingLength(sortedNamesTaskSix, 5);
-console.log(`Ім'я довжиною 5 символів знаходисться під індексом:${nameIndexWithMatchingLength}`);
+console.log(`Ім'я довжиною 5 символів знаходиться під індексом:${nameIndexWithMatchingLength}`);
 
