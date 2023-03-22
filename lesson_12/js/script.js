@@ -151,7 +151,7 @@ function binarySearch(arr, matchingName) {
 	let endIndex = arr.length - 1;
 
 	while (startIndex <= endIndex) {
-		let mid = Math.floor((startIndex + endIndex) / 2);
+		const mid = Math.floor((startIndex + endIndex) / 2);
 
 		if (arr[mid] === matchingName) return mid;
 		if (arr[mid] < matchingName) startIndex = mid + 1;
