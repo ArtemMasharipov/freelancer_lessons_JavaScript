@@ -1,4 +1,4 @@
-//Homework_lesson_12. Arrays. Continuation. Arrays sort algorithms.
+//Homework_lesson_12. Arrays. Continuation. Arrays' sort algorithms.
 "use strict";
 // ================================================================
 // Задача 1. Дано масив 30 випадкових цілих чисел. Підрахувати 
