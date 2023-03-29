@@ -171,9 +171,7 @@ function createAdditionQuizGenerator() {
 // Задача 6. Через 20 секунд перейти на сайт ukr.net. Для цього 
 // через 20 секунд після відкриття треба виконати команду
 // ================================================================
-// setTimeout(function () {
-// 	window.location.href = 'https://www.ukr.net/';
-// }, 20000); // час в мілісекундах
+// setTimeout(() => window.location.href = 'https://www.ukr.net/', 20000);
 
 
 
