@@ -1,87 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
 	<title>Lesson 13</title>
 </head>
 
 <body>
 	<div class="wrapper">
 		<header class="header">
-			<p class="header__text">ДЗ УРОК №13 (transition & animation )</p>
+			<h1>ДЗ. Урок №13. Масиви - практика. Рекурсія. Замикання.</h1>
+			<h2>Результат виводиться в консоль.</h2>
 		</header>
 		<main class="main">
-			<div class="appearance">
-				<div class="rocket">
-					<div class="rocket__container">
-						<div class="rocket__body">
-							<div class="rocket__item item">
-								<div class="item__1"></div>
-								<div class="item__2 item__2-position"></div>
-								<div class="item__3 item__3--position"></div>
-								<div class="item__4 item__4--position"></div>
-								<div class="item__5 item__5--position"></div>
-								<div class="item__6"></div>
-								<div class="item__7"></div>
-								<div class="item__8"></div>
-								<div class="item__90 item__90--position"></div>
-								<div class="item__91 item__91--position"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="truck">
-					<div class="truck__container">
-						<div class="truck__body">
-							<div class="truck__parts part">
-								<div class="part__1"></div>
-								<div class="part__2"></div>
-								<div class="part__3"></div>
-								<div class="part__4"></div>
-								<div class="part__5 part__5--position"></div>
-								<div class="part__6 part__6--position"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="section">
-				<div class="section__body">
-					<div class="section__items">
-						<div class="section__item-1 item-section">
-							<div class="item-section__1">
-								<p class="item-section__header-text">3.1) transition: all 3s ease 1s; (:hover)</p>
-							</div>
-							<div class="item-section__2"></div>
-							<div class="item-section__3"></div>
-						</div>
-						<div class="section__item-2 item-section">
-							<div class="item-section__4">
-								<p class="item-section__header-text">3.2) animation & @keyframes </p>
-							</div>
-							<div class="item-section__5">
-								<h2 class="title">Lorem ipsum dolor sit.</h2>
-								<p class="sub-title">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-								<p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quaerat, inventore
-									itaque odit nisi natus adipisci, laboriosam asperiores consectetur nesciunt veniam earum.</p>
-							</div>
-							<div class="item-section__6"></div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div class="card-container">
 
+				<div class="card">
+					<h2 class="card__title"></h2>
+					<p class="card__description">
+						Задача 1. Нехай x_0 = 1, x_i = x_i_1 + 2i, де i = 1, 2, ... . Визначити x_10. Розв’язати з використанням рекурсивних і нерекурсивних
+						алгоритмів.<br><br>
+						Задача 2. Нехай x_0 = x_1 = 1, x_i = x_i_1 + 2x_i_2, де i = 2, 3, ...  . Визначити x_n. Розв’язати з використанням рекурсивних і нерекурсивних
+						алгоритмів.<br><br>
+						Задача 3. З використанням замикань розробити ітератор, тобто функцію, що буде поступово за окремими
+						викликами видавати по одне значення від заданого мінімального до заданого максимального. Якщо значення
+						досягне максимального, то наступним буде мінімальне значення. З використанням цієї функції реалізувати
+						перебір номерів місяців. <br><br>
+						Задача 4. З використанням замикань розробити ітератор, тобто функцію, що буде поступово за окремими
+						викликами видавати по одну букву наперед заданого слова. З використанням нього розробити гру
+						«Прекладач». Виводимо для користувача опис цього слова і по одну букву користувач вводить переклад
+						цього слова. Підрахувати кількість вгаданих букв.<br><br>
+						Задача 5. Тренажер додавання. Кожні 10 секунд користувачу задають випадковий приклад з додавання двох
+						цифр і робиться перевірка.<br><br>
+						Задача 6. Через 20 секунд перейти на сайт ukr.net. Для цього через 20 секунд після відкриття треба
+						виконати команду.<br><br>
+
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+					</div>
+				</div>
+
+			</div>
 		</main>
-		<footer class="footer">
-
-		</footer>
+		<footer class="footer"></footer>
 	</div>
-
+	<script src="js/script.js"></script>
 </body>
 
 </html>
