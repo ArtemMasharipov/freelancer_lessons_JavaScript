@@ -1,153 +1,405 @@
-body {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  background-color: rgb(225, 229, 222);
+body{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background-color: rgb(225, 229, 222);
+	}
+	.header{
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
+		padding: 15px;
+		background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(136, 189, 149) 35%, rgba(0,212,255,1) 100%);
+	opacity: 0.8;
+		z-index: 10;
+	}
+	.header__text{
+		text-align: center;
+		font-size: 32px;
+		font-weight: 700;
+		color: white;
+		text-shadow: 2px 2px 3px;
+		text-transform: uppercase;
+	}
+.wrapper{
+	background: url('../img/road.jpg') 0 -75px / 1550px no-repeat;
+	height: 100%;
+	position: relative;
+	z-index: 0;
+}
+.appearance{
+	width: 900px;
+	position: absolute;
+	left: 100px;
+	top: 75px;
+	animation: appearance 4s ease 1 normal;
+}
+@keyframes appearance{
+	0%{
+		transform: translate(-1000px,0px);
+	}
+	
+	100%{
+		transform: translate(0px,0px);
+		}
+}
+.rocket__container {
+	height: 500px;
+	width: 150px;
+	position: relative;
+	left: 290px;
+	border-radius: 55px;
+	}
+	.rocket__container:hover [class*="item__9"]
+{
+	visibility: visible;
+	animation: flame 0.1s infinite;
 }
 
-.wrapper {
-  min-height: 100%;
-  position: relative;
-  /* display: flex; */
-  /* flex-direction: column; */
+.rocket__body {
+	height: 250px;
+	width: 100px;
+	border: 1px solid rgb(50, 147, 207);
+	border-radius: 42% 42% 24% 24% / 53% 53% 26% 26% ;
+	position: absolute;
+	top: 20%;
+	left: 53%;
+	transform: translate(-50%,0);
+	background: lightblue;	
+	animation: lauching 5s ease 2 alternate 4s;
+}
+@keyframes lauching{
+	0%{
+		transform: translate(-50%,0) ;
+	}
+	100%{
+		transform: translate(-50%,-300%) scale(0.1);
+		}
 }
 
-.wrapper > main {
-  flex-grow: 1;
+.item__1 {
+height: 50px;
+width: 50px;
+border: 2px solid rgb(50, 147, 207);
+border-radius: 50%;
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translate(-50%,0);
+background: skyblue;
+}
+.item__2,
+.item__3 {
+height: 175px;
+width: 35px;
+border-radius: 0% 56% 24% 46% / 51% 81% 12% 26% ;
+position: absolute;
+background: rgb(114, 120, 129);
+}
+.item__2-position{
+	top: 60%;
+	left: -36%;
+	transform: rotateY(180deg);
+}
+.item__3--position{
+top: 60%;
+left: 100%;
+}
+.item__4,
+.item__5 {
+	height: 30px;
+	width: 30px;
+	border: 2px solid rgb(106, 100, 100);
+	border-radius:	33% 33% 25% 25% / 75% 75% 12% 12%  ;
+	position: absolute;
+	background: gray;
+}
+.item__4--position {
+	top: 100%;
+	left: 13%;
+}
+.item__5--position{
+	top: 100%;
+	right:13%;
+}
+.item__6 {
+	height: 35px;
+	width: 60px;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	transform: translate(-50%);
+	background-image: linear-gradient(
+  180deg,
+  hsl(240deg 94% 59%) 1%,
+  hsl(243deg 78% 64%) 42%,
+  hsl(246deg 58% 67%) 49%,
+  hsl(251deg 37% 68%) 52%,
+  hsl(273deg 15% 68%) 52%,
+  hsl(26deg 18% 70%) 52%,
+  hsl(45deg 43% 69%) 52%,
+  hsl(50deg 66% 67%) 54%,
+  hsl(53deg 85% 64%) 60%,
+  hsl(55deg 100% 50%) 94%
+);
 }
 
-.header {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  padding: 15px;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgb(167, 171, 168) 35%,
-    rgb(204, 218, 221) 100%
-  );
-  opacity: 0.8;
-  z-index: 10;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 30px;
+/* ==================Flame========================== */
+.item__90,
+.item__91{
+	width:30px;
+	height:30px;
+	background:linear-gradient(-45deg, red, orange);
+	border-radius: 150px 150px 0px 150px;
+	transform:rotate(-315deg);
+	filter:blur(2px);
+	position:absolute;
+	box-shadow:3px 4px 18px #700;
+	border:1px solid black;
+	border-left-width:5px;
+	border-top-width:5px;
+	animation: flame 0.1s 105 3.5s;
+	z-index: -1;
+	visibility: hidden;
+	
 }
 
-[class*='__container'] {
-  max-width: 1275px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+.item__90--position{
+	top: 110%;
+	left:13.5%;
 }
-h2 {
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-align: center;
+.item__91--position{
+	top: 110%;
+	right:13%;
 }
-.card > p:nth-child(2) {
-  border: 2px solid;
-  border-radius: 5px;
-  padding: 5px;
-  background: rgba(128, 128, 128, 0.342);
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 25px;
+ @keyframes flame{
+  0% {visibility: visible;
+	height:30px; 
+	width:30px;}
+  50% {height:28px; width:28px;}
+  100% {height:30px; width:30px;}
+} 
+/* ==================Truck========================== */
+
+.truck__container {
+	height: 500px;
+	width: 700px;
+	position: relative;
+	border-radius: 55px;
 }
 
-.main {
-  margin: 0 auto;
+.part {
+	position: absolute;
+	top: -39%;
+	left: 30%;
+}
+.part__1 {
+	position: absolute;
+	top: 120px;
+	left: 0px;
+	height: 70px;
+	width: 350px;
+	border-radius: 15px 0 0 15px;
+	background: rgb(1, 28, 18);
+}
+.part__2 {
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	top: 0;
+	left: 310px;
+	border-radius: 8% 82% 10% 10% / 10% 67% 10% 10% ;
+	background: rgb(136, 44, 44);
+}
+.part__3 {
+	position: absolute;
+	left: 458px;
+	top: 4px;
+	width: 25px;
+	height: 120px;
+	background: skyblue;
+	border-radius: 0% 82% 100% 0% / 10% 38% 38% 10%   ;
+transform: rotate(-42deg);
+}
+.part__4 {
+	position: absolute;
+	left: 340px;
+	top: 40px;
+	border: 2px solid black;
+	width: 80px;	
+	height: 60px;
+	background: skyblue;
+	border-radius: 5px;
+}
+.part__5,
+.part__6 {
+	position: absolute;
+	border: 25px dashed black;
+	width: 90px;	
+	height: 90px;
+	background: rgb(81, 74, 74);
+	border-radius: 50%;
+	z-index: -1;
+	animation: wheels-rotate 4s ease 1 normal;
+}
+.part__5--position{
+	left: 34px;
+	top: 140px;
+}
+.part__6--position{
+	left: 360px;
+	top: 140px;
+}
+@keyframes wheels-rotate{
+	0% {
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+			}
+}
+/*==================================================== 3) 
+3.1) За допомогою transition потрібно зробити появу об'єкту при наведенні. Поява має відбутись за 3 секунди через 1 секунду після наведення. Також має змінись колір фону об'єкту після появи.
+3.2)  За допомогою animation & @keyframes зробити анімацію появи заголовку та тексту, а також неперервну ротацію об'єкту, повний оберт за 5 секунд. =====================================================*/
+.section{
+	
+}
+.section__body {
+	position: absolute;
+	height: 600px;
+	width: 1000px;
+	border: 1px solid;
+	border-radius: 10px;
+	left: 17%;
+	top: 120%;
+	background: rgb(225, 219, 219);	
+}
+.item-section__header-text{
+	text-align: center;
+		font-weight: 700;
+		color: white;
+		text-transform: uppercase;
+}
+/* ========section 1=========================== */
+.section__item-1 {
+	top: 50px;
+	left: 50px;
+}
+.item-section{
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	border: 1px solid;
+	border-radius: 15px;
+	background: white;
+	box-shadow: 3px 3px 3px;
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 80%;
-  margin: 0 auto;
-  margin-top: 120px;
-}
+.item-section__1,
+.item-section__4{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	padding: 15px;
+	background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(136, 189, 149) 35%, rgba(0,212,255,1) 100%);
+opacity: 0.8;
+	z-index: 10;
+	border-radius: 15px;
+	}
 
-.card {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  min-height: 30px;
-  max-width: 800px;
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #f2f2f2;
-  box-shadow: 2px 2px 5px #999;
-  border-radius: 5px;
-}
-.card__input-container {
-  flex-grow: 1;
-}
-@media only screen and (max-width: 768px) {
-  .card-container {
-    max-width: 600px;
-    min-width: 390px;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
-    margin-top: 220px;
-  }
-
-  .card {
-    width: 100%;
-    margin: 10px 0;
-    padding: 20px 10px;
-  }
-}
-.card__input-container * {
-  margin-bottom: 5px;
-}
-button {
-  border: 1px solid gray;
-  padding: 10px;
-  border-radius: 5px;
-  background: rgb(133, 214, 133);
-}
-button:active {
-  background: green;
-  transform: translateY(2px);
-}
-input {
-  border-radius: 5px;
-  margin-bottom: 10px;
-  margin-left: 5px;
-  min-height: 30px;
-  max-width: 60px;
-  padding: 5px;
-  border: 1px solid;
-}
-.card__result {
-  font-weight: 700;
-}
-.task-submit {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 10px;
-  padding-right: 40px;
-}
-.task-submit > button {
-  flex-basis: 10%;
-}
-.task-submit > * {
-  align-self: flex-end;
-}
-#tableContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 5px;
-}
-form {
-  display: flex;
-  flex-direction: column;
-}
-.card__task-five input,
-p {
-  display: inline-flex;
-}
+	.item-section__2{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 150px;
+	width: 150px;
+	transform: translate(-50%,-50%);
+	border-radius: 50%;
+	border: 2px solid;
+	background: red;
+	transition: all 3s ease 1s;
+	opacity: 0;
+	}
+	.section__item-1:hover .item-section__2{
+		background: green;
+		opacity: 1;
+		}
+		/* ========section 2=========================== */
+		h2{
+			font-weight: 700;
+			font-size: 24px;
+			animation: title 1s ease forwards;
+			transform: translate(0px, 50%);
+			opacity: 0;
+		}
+		.section__item-2 {
+		top: 50px;
+		right: 50px;
+		}
+		.item-section__5 {
+			padding: 10px;
+			padding-top: 65px;
+			}
+		.item-section__5  > *:not(:last-child) {
+		margin-bottom: 10px;
+		}
+		.sub-title {
+			font-size: 24px;
+			transform: translate(0px, 50%);
+			animation: title 1s ease 0.5s forwards;
+			opacity: 0;
+		}
+		.sub-title:not(:last-child) {
+			margin-bottom: 15px;
+		}
+		.text {
+			line-height: 1.5;
+			transform: translate(0px, 50%);
+			animation: title 4s ease 1s forwards;
+			opacity: 0;
+		}
+		
+		@keyframes title {
+			0% {
+				transform: translate(1px, 1%);
+			}
+			100% {
+				transform: translate(10px, 10%);
+				opacity: 1;
+			}
+		}
+	
+			.item-section__6 {
+			width:100px;
+			height: 100px;
+			border-radius: 34% 66% 23% 77% / 33% 30% 70% 67% ;
+			background-image: linear-gradient(
+			45deg,
+			hsl(240deg 100% 20%) 0%,
+			hsl(289deg 100% 21%) 11%,
+			hsl(315deg 100% 27%) 22%,
+			hsl(329deg 100% 36%) 33%,
+			hsl(337deg 100% 43%) 44%,
+			hsl(357deg 91% 59%) 56%,
+			hsl(17deg 100% 59%) 67%,
+			hsl(34deg 100% 53%) 78%,
+			hsl(45deg 100% 50%) 89%,
+			hsl(55deg 100% 50%) 100%
+			);
+			position: absolute;
+			bottom:10px;
+			right: 10px;
+			animation: object-rotation 5s infinite ease-in-out alternate;
+			box-shadow: 3px 3px 30px;
+		}
+		@keyframes object-rotation {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
