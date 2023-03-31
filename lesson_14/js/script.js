@@ -186,7 +186,6 @@ function getShiftedMonth({ month, currentYear }, N) {
 	return shiftedYear;
 }
 
-console.log("--------------------------------------------Задача 2");
 // const N = parseInt(prompt("N="));
 // const shiftedYear = getShiftedMonth(userDate, N);
 // alert(`Через ${N} місяців буде ${shiftedYear} рік `);
