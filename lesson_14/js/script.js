@@ -1,4 +1,4 @@
-//Homework_lesson_14. Objects. Intruduсtion.
+//Homework_lesson_14. Objects. Introduсtion.
 "use strict";
 // ================================================================
 // ================================================================
