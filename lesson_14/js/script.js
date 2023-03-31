@@ -73,7 +73,7 @@ const websites = [
 // 1) загальну вартість усіх сайтів
 // ================================================================
 const totalSitesCost = websites.reduce(
-	(totalSitesSum, site) => (totalSitesSum + site.cost), 0)
+	(totalSitesSum, site) => totalSitesSum + site.cost, 0)
 	
 console.log("--------------------------------------------Задача 1");
 console.log("1) Загальну вартість усіх сайтів:");
@@ -82,7 +82,7 @@ console.log(totalSitesCost);
 // 2) кількість сайтів, що було зроблено між 2000 та 2009 рр.
 // ================================================================
 const quantityOfSitesMadeBetween2000And2009 = websites.reduce(
-	(prevQuantity, sites) => (sites.year > 2000 && sites.year < 2009 ? ++prevQuantity : prevQuantity),
+	(prevQuantity, sites) => sites.year > 2000 && sites.year < 2009 ? ++prevQuantity : prevQuantity,
 	0);
 
 console.log("2) Кількість сайтів, що було зроблено між 2000 та 2009 рр.:");
