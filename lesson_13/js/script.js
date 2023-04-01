@@ -103,10 +103,11 @@ function createLetterIterator(word) {
       const currentLetter = word[index];
       index++;
       return currentLetter;
-    } 
+    } else {
+      return null;
+    }
   }
 }
-
 
 function runTranslator(word) {
 	alert('Відкрита JavaScript бібліотека для створення інтерфейсів користувача?')
