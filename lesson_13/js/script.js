@@ -97,11 +97,16 @@ console.log(resultTaskThreeArray);
 // кількість вгаданих букв.
 // ================================================================
 function createLetterIterator(word) {
-	let i = 0;
-	return function getNextLetter() {
-		return (i < word.length) ? word[i++] : null;
-	}
+  let index = 0;
+  return function getNextLetter() {
+    if (index < word.length) {
+      const currentLetter = word[index];
+      index++;
+      return currentLetter;
+    } 
+  }
 }
+
 
 function runTranslator(word) {
 	alert('Відкрита JavaScript бібліотека для створення інтерфейсів користувача?')
