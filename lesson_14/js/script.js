@@ -91,12 +91,27 @@ console.log(quantityOfSitesMadeBetween2000And2009);
 // 3) кількість сайтів, де сума спонсорських вкладень була більшою 
 // за 100000
 // ================================================================
-const AMOUNT_THRESHOLD = 100000;
+// const AMOUNT_THRESHOLD = 100000;
 
-const countWebsitesWithTotalSponsorshipOver100000 = websites.reduce((count, website) => {
-	const totalSponsorship = website.sponsors.reduce((total, sponsor) => total + sponsor.amount, 0);
-	return totalSponsorship > AMOUNT_THRESHOLD ? count + 1 : count;
-}, 0);
+// const countWebsitesWithTotalSponsorshipOver100000 = websites.reduce((count, website) => {
+// 	const totalSponsorship = website.sponsors.reduce((total, sponsor) => total + sponsor.amount, 0);
+// 	return totalSponsorship > AMOUNT_THRESHOLD ? count + 1 : count;
+// }, 0);
+
+// console.log("3) Кількість сайтів, де сума спонсорських вкладень була більшою за 100000:");
+// console.log(countWebsitesWithTotalSponsorshipOver100000);
+const AMOUNT_THRESHOLD = 100000;
+let countWebsitesWithTotalSponsorshipOver100000 = 0;
+
+for (const website of websites) {
+	let totalSponsorship = 0;
+	for (const sponsor of website.sponsors) {
+		totalSponsorship += sponsor.amount;
+	}
+	if (totalSponsorship > AMOUNT_THRESHOLD) {
+		countWebsitesWithTotalSponsorshipOver100000++;
+	}
+}
 
 console.log("3) Кількість сайтів, де сума спонсорських вкладень була більшою за 100000:");
 console.log(countWebsitesWithTotalSponsorshipOver100000);
