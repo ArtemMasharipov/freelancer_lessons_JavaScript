@@ -64,7 +64,7 @@ const Tir = {
 	shoot: function (x, y) {
 		if (this.field[x][y] === 1) {
 			console.log("Ви влучили у зайця!");
-			this.field[x][y] = 0; // видаляємо заєця з поля
+			this.field[x][y] = 0; // видаляємо зайця з поля
 		} else {
 			console.log("На жаль, промахнулись.");
 		}
