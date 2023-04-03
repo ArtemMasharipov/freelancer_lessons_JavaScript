@@ -145,7 +145,7 @@ function createAdditionQuizGenerator() {
 		const num2 = getRandomNumber();
 		const answer = num1 + num2;
 		const userAnswer = parseInt(prompt(`Скільки буде ${num1} + ${num2}?`));
-		if (userAnswer !== null) {
+		if (userAnswer !== NaN) {
 			totalCount++;
 			if (userAnswer === answer) {
 				correctCount++;
