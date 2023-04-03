@@ -171,42 +171,43 @@ car.refuel(20);
 console.log("--------------------------------------------Задача 3")
 
 class MultChecker {
-    constructor(num) {
-        this.num = num;
-        this.correctAnswers = 0;
-        this.incorrectAnswers = 0;
-    }
+	constructor(num) {
+		this.num = num;
+		this.correctAnswers = 0;
+		this.incorrectAnswers = 0;
+	}
 
-    getRandomNum(minNum, maxNum) {
-        return minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
-    }
+	getRandomNum(minNum, maxNum) {
+		return minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+	}
 
-    generateExample(secondNum) {
-        console.log(`Приклад: ${this.num} * ${secondNum} = ?`);
-        const userAnswer = prompt(`Результат множення ${this.num} на ${secondNum} = ?`);
-        this.checkAnswer(parseInt(userAnswer), secondNum);
-    }
+	generateExample(secondNum) {
+		console.log(`Приклад: ${this.num} * ${secondNum} = ?`);
+		const userAnswer = prompt(`Результат множення ${this.num} на ${secondNum} = ?`);
+		this.checkAnswer(parseInt(userAnswer), secondNum);
+	}
 
-    checkAnswer(answer, secondNum) {
-        if (answer === this.num * secondNum) {
-            this.correctAnswers++;
-            alert('Правильно!');
-        } else {
-            this.incorrectAnswers++;
-        }
-    }
+	checkAnswer(answer, secondNum) {
+		if (answer === this.num * secondNum) {
+			this.correctAnswers++;
+			alert('Правильно!');
+		} else {
+			this.incorrectAnswers++;
+		}
+	}
 
-    render() {
-        console.log(`Перевірка таблиці множення на ${this.num}`);
-        console.log(`Правильних відповідей: ${this.correctAnswers}`);
-        console.log(`Неправильних відповідей: ${this.incorrectAnswers}`);
-    }
+	render() {
+		console.log(`Перевірка таблиці множення на ${this.num}`);
+		console.log(`Правильних відповідей: ${this.correctAnswers}`);
+		console.log(`Неправильних відповідей: ${this.incorrectAnswers}`);
+	}
 }
 
 // Приклад використання класу
 // const checker = new MultChecker(7);
 // checker.generateExample(checker.getRandomNum(1, 10));
 // checker.render();
+
 // ================================================================
 // Задача 4. Розробити клас Baner
 // Поля:
