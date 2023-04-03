@@ -168,6 +168,8 @@ car.refuel(20);
 // - Перевірка правильності вказаної відповіді
 // - render - виведення інформації про тестування на екран
 // ================================================================
+console.log("--------------------------------------------Задача 3")
+
 class MultChecker {
 	constructor(num) {
 		this.num = num;
@@ -176,19 +178,24 @@ class MultChecker {
 	}
 
 	getRandomNum(minNum, maxNum) {
-		return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+		return minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
 	}
 
 	generateExample() {
-		const secondNum = this.getRandomNum(1, 10);
-		const userAnswer = prompt(`Результат множення ${this.num} на ${secondNum} = ?`);
-		this.checkAnswer(parseInt(userAnswer), secondNum);
+		do {
+			const secondNum = this.getRandomNum(1, 10); // викликаємо метод на поточному об'єкті
+			console.log(`Приклад: ${this.num} * ${secondNum} = ?`);
+			const userAnswer = prompt(`Результат множення ${this.num} на ${secondNum} = ?`);
+			this.checkAnswer(parseInt(userAnswer), secondNum);
+		}
+		while (confirm("Продовжуємо?"))
+		this.render(); // викликаємо метод після закінчення генерації прикладів
 	}
 
 	checkAnswer(answer, secondNum) {
 		if (answer === this.num * secondNum) {
 			this.correctAnswers++;
-			alert('Правильно!');
+			console.log('Правильно!');
 		} else {
 			this.incorrectAnswers++;
 		}
@@ -204,7 +211,6 @@ class MultChecker {
 // Приклад використання класу
 // const checker = new MultChecker(7);
 // checker.generateExample();
-// checker.render();
 // ================================================================
 // Задача 4. Розробити клас Baner
 // Поля:
