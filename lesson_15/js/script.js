@@ -49,7 +49,17 @@ console.log(productBetweenResultObj2);
 console.log("--------------------------------------------Задача 1")
 
 const Tir = {
-	field: [[0, 0, 0], [1, 0, 1], [0, 1, 0]],
+	field: [],
+
+	generateField: function () {
+		for (let i = 0; i < 3; i++) {
+			let row = [];
+			for (let j = 0; j < 3; j++) {
+				row.push(Math.round(Math.random()));
+			}
+			this.field.push(row);
+		}
+	},
 
 	shoot: function (x, y) {
 		if (this.field[x][y] === 1) {
@@ -68,6 +78,7 @@ const Tir = {
 	}
 };
 
+Tir.generateField(); // Генеруємо ігрове поле
 Tir.printField(); // Виводимо початкове ігрове поле
 Tir.shoot(1, 0); // Стріляємо по координатах (1,0)
 Tir.printField(); // Виводимо оновлене ігрове поле
