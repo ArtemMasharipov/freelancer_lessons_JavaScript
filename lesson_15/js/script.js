@@ -177,19 +177,14 @@ class MultChecker {
 		this.incorrectAnswers = 0;
 	}
 
-	getRandomNum(minNum, maxNum) {
-		return minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
-	}
-
-	generateExample() {
+	generateExample(minNum, maxNum) {
 		do {
-			const secondNum = this.getRandomNum(1, 10); // викликаємо метод на поточному об'єкті
+			const secondNum = minNum + Math.floor(Math.random() * (maxNum - minNum + 1)); 
 			console.log(`Приклад: ${this.num} * ${secondNum} = ?`);
-			const userAnswer = prompt(`Результат множення ${this.num} на ${secondNum} = ?`);
+			const userAnswer = prompt(`Будь ласка, введіть результат множення ${this.num} на ${secondNum}`);
 			this.checkAnswer(parseInt(userAnswer), secondNum);
 		}
-		while (confirm("Продовжуємо?"))
-		this.render(); // викликаємо метод після закінчення генерації прикладів
+		while (confirm("Бажаєте продовжити перевірку?"))
 	}
 
 	checkAnswer(answer, secondNum) {
@@ -210,7 +205,8 @@ class MultChecker {
 
 // Приклад використання класу
 // const checker = new MultChecker(7);
-// checker.generateExample();
+// checker.generateExample(1, 10);
+// checker.render();
 // ================================================================
 // Задача 4. Розробити клас Baner
 // Поля:
