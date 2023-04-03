@@ -97,20 +97,20 @@ console.log(resultTaskThreeArray);
 // кількість вгаданих букв.
 // ================================================================
 function createLetterIterator(word) {
-  let index = 0;
-  return function getNextLetter() {
-    if (index < word.length) {
-      const currentLetter = word[index];
-      index++;
-      return currentLetter;
-    } else {
-      return null;
-    }
-  }
+	let index = 0;
+	return function getNextLetter() {
+		if (index < word.length) {
+			const currentLetter = word[index];
+			index++;
+			return currentLetter;
+		} else {
+			return null;
+		}
+	}
 }
 
-function runTranslator(word) {
-	alert('Відкрита JavaScript бібліотека для створення інтерфейсів користувача?')
+function runTranslator(word, wordDescription) {
+	alert(`${wordDescription}`)
 	let countGuessedLetters = 0;
 	const getNextLetter = createLetterIterator(word);
 	for (let i = 0; i < word.length; i++) {
@@ -127,7 +127,12 @@ function runTranslator(word) {
 }
 
 const secretWord = 'React';
-// console.log(`Кількість вгаданих букв = ${runTranslator(secretWord)}`);
+const secretWordDescription = 'JavaScript library for building user interfaces';
+console.log(`Кількість вгаданих букв = ${runTranslator(secretWord, secretWordDescription)}`);
+
+const secretWord2 = 'Python';
+const secretWordDescription2 = 'High-level programming language for general-purpose programming';
+console.log(`Кількість вгаданих букв = ${runTranslator(secretWord2, secretWordDescription2)}`);
 // ================================================================
 // Задача 5. Тренажер додавання. Кожні 10 секунд користувачу задають 
 // випадковий приклад з додавання двох цифр і робиться перевірка.
