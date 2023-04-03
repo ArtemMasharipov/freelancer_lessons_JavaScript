@@ -168,42 +168,44 @@ car.refuel(20);
 // - Перевірка правильності вказаної відповіді
 // - render - виведення інформації про тестування на екран
 // ================================================================
+console.log("--------------------------------------------Задача 3")
+
 class MultChecker {
-	constructor(num) {
-		this.num = num;
-		this.correctAnswers = 0;
-		this.incorrectAnswers = 0;
-	}
+    constructor(num) {
+        this.num = num;
+        this.correctAnswers = 0;
+        this.incorrectAnswers = 0;
+    }
 
-	generateExample() {
-		do {
-			const secondNum = Math.floor(Math.random() * 10) + 1; // генеруємо випадкове число від 1 до 10
-			console.log(`Приклад: ${this.num} * ${secondNum} = ?`);
-			const userAnswer = prompt(`Результат множення ${this.num} на ${secondNum} = ?`);
-			this.checkAnswer(parseInt(userAnswer), secondNum);
-		}
-		while (confirm("Продовжуємо?"))
-	}
+    getRandomNum(minNum, maxNum) {
+        return minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+    }
 
-	checkAnswer(answer, secondNum) {
-		if (answer === this.num * secondNum) {
-			this.correctAnswers++;
-			console.log('Правильно!');
-		} else {
-			this.incorrectAnswers++;
-		}
-	}
+    generateExample(secondNum) {
+        console.log(`Приклад: ${this.num} * ${secondNum} = ?`);
+        const userAnswer = prompt(`Результат множення ${this.num} на ${secondNum} = ?`);
+        this.checkAnswer(parseInt(userAnswer), secondNum);
+    }
 
-	render() {
-		console.log(`Перевірка таблиці множення на ${this.num}`);
-		console.log(`Правильних відповідей: ${this.correctAnswers}`);
-		console.log(`Неправильних відповідей: ${this.incorrectAnswers}`);
-	}
+    checkAnswer(answer, secondNum) {
+        if (answer === this.num * secondNum) {
+            this.correctAnswers++;
+            alert('Правильно!');
+        } else {
+            this.incorrectAnswers++;
+        }
+    }
+
+    render() {
+        console.log(`Перевірка таблиці множення на ${this.num}`);
+        console.log(`Правильних відповідей: ${this.correctAnswers}`);
+        console.log(`Неправильних відповідей: ${this.incorrectAnswers}`);
+    }
 }
 
 // Приклад використання класу
 // const checker = new MultChecker(7);
-// checker.generateExample();
+// checker.generateExample(checker.getRandomNum(1, 10));
 // checker.render();
 // ================================================================
 // Задача 4. Розробити клас Baner
