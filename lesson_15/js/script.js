@@ -8,35 +8,35 @@
 // Використати обидва методи стосовно обидвох об’єктів 
 // (використати call, apply)
 // ================================================================
-console.log("--------------------------------------------Задача 0")
+console.log("--------------------------------------------Задача 0");
 
 const obj1 = {
-	numbers: [1, 2, 3, 4, 5],
-	objElementsTotalSum: function () {
-		return this.numbers.reduce((totalSum, currElem) => totalSum + currElem, 0);
-	}
+  numbers: [1, 2, 3, 4, 5],
+  objElementsTotalSum: function () {
+    return this.numbers.reduce((totalSum, currElem) => totalSum + currElem, 0);
+  }
 };
 
 const obj2 = {
-	numbers: [2, 4, 6, 8, 10],
-	objProductElementsBetweenMinAndMaxValue: function (minValue, maxValue) {
-		return this.numbers.reduce((productRes, currElem) => (currElem >= minValue && currElem <= maxValue) ? productRes * currElem : productRes, 1);
-	}
+  numbers: [2, 4, 6, 8, 10],
+  objProductElementsBetweenMinAndMaxValue: function (minValue, maxValue) {
+    return this.numbers.reduce((productRes, currElem) => currElem >= minValue && currElem <= maxValue ? productRes * currElem : productRes, 1);
+  }
 };
 
-const sumResultObj1 = obj1.objElementsTotalSum.call(obj1);
-const sumResultObj2 = obj1.objElementsTotalSum.call(obj2);
-const productBetweenResultObj1 = obj2.objProductElementsBetweenMinAndMaxValue.apply(obj1, [2, 6]);
-const productBetweenResultObj2 = obj2.objProductElementsBetweenMinAndMaxValue.apply(obj2, [2, 6]);
+const sumResultObj1 = obj1.objElementsTotalSum();
+const sumResultObj2Call = obj1.objElementsTotalSum.call(obj2);
+const sumResultObj2Apply = obj1.objElementsTotalSum.apply(obj2);
+const productBetweenResultObj2 = obj2.objProductElementsBetweenMinAndMaxValue(2, 6);
+const productBetweenResultObj1Apply = obj2.objProductElementsBetweenMinAndMaxValue.apply(obj1, [2, 6]);
+const productBetweenResultObj1Call = obj2.objProductElementsBetweenMinAndMaxValue.call(obj1, 2, 6);
 
-console.log("Сума чисел obj1:");
-console.log(sumResultObj1);
-console.log("Сума чисел obj2:");
-console.log(sumResultObj2);
-console.log("Добуток чисел між максимальним і мінімальним значеннями obj1:");
-console.log(productBetweenResultObj1);
-console.log("Добуток чисел між максимальним і мінімальним значеннями obj2:");
-console.log(productBetweenResultObj2);
+console.log(`Сума чисел obj1: ${sumResultObj1}`);
+console.log(`Сума чисел obj2 (call): ${sumResultObj2Call}`);
+console.log(`Сума чисел obj2 (apply): ${sumResultObj2Apply}`);
+console.log(`Добуток чисел між максимальним і мінімальним значеннями obj1 (apply): ${productBetweenResultObj1Apply}`);
+console.log(`Добуток чисел між максимальним і мінімальним значеннями obj1 (call): ${productBetweenResultObj1Call}`);
+console.log(`Добуток чисел між максимальним і мінімальним значеннями obj2: ${productBetweenResultObj2}`);
 // ================================================================
 // Задача 1. Створити об’єкт «Тир». У масиві зберігаються 1, якщо 
 // у цьому квадраті є заєць і 0 в іншому випадку.
