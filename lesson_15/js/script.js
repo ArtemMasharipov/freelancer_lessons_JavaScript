@@ -11,17 +11,17 @@
 console.log("--------------------------------------------Задача 0");
 
 const obj1 = {
-  numbers: [1, 2, 3, 4, 5],
-  objElementsTotalSum: function () {
-    return this.numbers.reduce((totalSum, currElem) => totalSum + currElem, 0);
-  }
+	numbers: [1, 2, 3, 4, 5],
+	objElementsTotalSum: function () {
+		return this.numbers.reduce((totalSum, currElem) => totalSum + currElem, 0);
+	}
 };
 
 const obj2 = {
-  numbers: [2, 4, 6, 8, 10],
-  objProductElementsBetweenMinAndMaxValue: function (minValue, maxValue) {
-    return this.numbers.reduce((productRes, currElem) => currElem >= minValue && currElem <= maxValue ? productRes * currElem : productRes, 1);
-  }
+	numbers: [2, 4, 6, 8, 10],
+	objProductElementsBetweenMinAndMaxValue: function (minValue, maxValue) {
+		return this.numbers.reduce((productRes, currElem) => currElem >= minValue && currElem <= maxValue ? productRes * currElem : productRes, 1);
+	}
 };
 
 const sumResultObj1 = obj1.objElementsTotalSum();
