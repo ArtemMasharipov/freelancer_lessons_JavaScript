@@ -20,7 +20,7 @@ const obj1 = {
 const obj2 = {
 	numbers: [2, 4, 6, 8, 10],
 	objProductElementsBetweenMinAndMaxValue: function (minValue, maxValue) {
-		return this.numbers.reduce((productRes, currElem) => currElem >= minValue && currElem <= maxValue ? productRes * currElem : productRes, 1);
+		return this.numbers.reduce((productRes, currElem) => (currElem >= minValue && currElem <= maxValue) ? productRes * currElem : productRes, 1);
 	}
 };
 
