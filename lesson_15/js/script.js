@@ -179,18 +179,18 @@ class MultChecker {
 
 	generateExample(minNum, maxNum) {
 		do {
-			const secondNum = minNum + Math.floor(Math.random() * (maxNum - minNum + 1)); 
-			console.log(`Приклад: ${this.num} * ${secondNum} = ?`);
-			const userAnswer = prompt(`Будь ласка, введіть результат множення ${this.num} на ${secondNum}`);
-			this.checkAnswer(parseInt(userAnswer), secondNum);
-		}
-		while (confirm("Бажаєте продовжити перевірку?"))
+			const secondNum = minNum + Math.floor(Math.random() * (maxNum - minNum + 1));
+			const example = `${this.num} * ${secondNum} = ?`;
+			const answer = this.num * secondNum;
+			const userAnswer = prompt(`Будь ласка, введіть результат множення ${example}`);
+			this.checkAnswer(parseInt(userAnswer), answer);
+		} while (confirm("Бажаєте продовжити перевірку?"));
 	}
 
-	checkAnswer(answer, secondNum) {
-		if (answer === this.num * secondNum) {
+	checkAnswer(answer, correctAnswer) {
+		if (answer === correctAnswer) {
 			this.correctAnswers++;
-			console.log('Правильно!');
+			alert('Правильно!');
 		} else {
 			this.incorrectAnswers++;
 		}
@@ -203,7 +203,6 @@ class MultChecker {
 	}
 }
 
-// Приклад використання класу
 // const checker = new MultChecker(7);
 // checker.generateExample(1, 10);
 // checker.render();
