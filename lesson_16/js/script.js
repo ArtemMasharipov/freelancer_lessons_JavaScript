@@ -437,7 +437,7 @@ class TBankomat {
 	}
 
 	withdraw(sum) {
-		if (typeof sum !== 'number' || sum <= 50) throw new Error('Некоректна сума');
+		if (typeof sum !== 'number' || sum <= 5) throw new Error('Некоректна сума');
 
 		// сортування масиву за спаданням за номіналом банкнот
 		for (let i = 1; i < this.banknotes.length; i++) {
