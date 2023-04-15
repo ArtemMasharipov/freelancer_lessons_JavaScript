@@ -472,12 +472,13 @@ class TBankomat {
 }
 
 const banknotes = [
-	new Banknote(1000, 5),
-	new Banknote(500, 10),
-	new Banknote(200, 20),
-	new Banknote(100, 50),
-	new Banknote(50, 100),
-];
+	new Banknote(200, 5),
+	new Banknote(100, 10),
+	new Banknote(50, 20),
+	new Banknote(20, 50),
+	new Banknote(10, 100),
+	new Banknote(5, 200),
+]; 
 
 const tBankomat = new TBankomat(banknotes);
 
