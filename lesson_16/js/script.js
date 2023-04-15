@@ -490,4 +490,4 @@ const result = tBankomat.withdraw(400);
 console.log(`Ви зняли з банкомату суму: ${Object.keys(result).reduce((acc, curr) => acc + parseInt(curr) * result[curr], 0)}`);
 console.log('Банкноти, які ви отримали:');
 console.log(result);
-console.log(`На рахунку залишилось: ${tBankomat.totalAmount}`);
+console.log(`Грошей в банкоматі залишилось: ${tBankomat.totalAmount}`);
