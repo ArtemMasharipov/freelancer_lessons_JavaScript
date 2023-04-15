@@ -372,11 +372,7 @@ class Company {
 		if (accessibleServicesByCostAndDuration.length === 0) throw new Error('No matching services found');
 		return accessibleServicesByCostAndDuration;
 	}
-getServicesByCostAndDuration(cost, duration) {
-		const matchingServices = this.Services.filter(service => service.Cost >= cost && service.Duration >= duration);
-		if (matchingServices.length === 0) throw new Error('Matching services not found');
-		return matchingServices;
-	}
+
 	toString() {
 		return `"${this.Name}":
 		Founded in: ${this.FoundedDate.getFullYear()}, 
