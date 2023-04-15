@@ -368,11 +368,15 @@ class Company {
 	}
 
 	getServicesByCostAndDuration(cost, duration) {
+		const accessibleServicesByCostAndDuration = this.Services.filter(service => service.Cost <= cost && service.Duration <= duration);
+		if (accessibleServicesByCostAndDuration.length === 0) throw new Error('No matching services found');
+		return accessibleServicesByCostAndDuration;
+	}
+getServicesByCostAndDuration(cost, duration) {
 		const matchingServices = this.Services.filter(service => service.Cost >= cost && service.Duration >= duration);
 		if (matchingServices.length === 0) throw new Error('Matching services not found');
 		return matchingServices;
 	}
-
 	toString() {
 		return `"${this.Name}":
 		Founded in: ${this.FoundedDate.getFullYear()}, 
@@ -387,6 +391,7 @@ const myCompany = new Company("MyCompany", { year: 2010, month: 5 });
 myCompany.addService("Service1", 20, 30);
 myCompany.addService("Service2", 30, 45);
 myCompany.addService("Service3", 40, 60);
+myCompany.addService("Service4", 110, 60);
 
 myCompany.addBranch("Ukraine", "Kyiv", "Street1", "1");
 myCompany.addBranch("Ukraine", "Kyiv", "Street2", "2");
@@ -398,7 +403,7 @@ const branchesInKyiv = myCompany.getBranchesByCity("Kyiv");
 console.log(`\nBranches in Kyiv: ${branchesInKyiv}`);
 
 const cheapServices = myCompany.getServicesByCostAndDuration(40, 60);
-console.log(`\nCheap services: ${cheapServices}`);
+console.log(`\nAccessible services: ${cheapServices}`);
 // ================================================================
 // Задача 4. Створити клас TBankomat, який моделює роботу банкомата. 
 // Клас повинен містити поля для зберігання кількості купюр кожного 
@@ -436,7 +441,7 @@ class TBankomat {
 
 
 	withdraw(sum) {
-		if (typeof sum !== 'number' || sum <= 50) throw new Error('Некоректна сума');
+		if (typeof sum !== 'number' || sum <= 5) throw new Error('Некоректна сума');
 
 		// сортування масиву за спаданням за номіналом банкнот
 		for (let i = 1; i < this.banknotes.length; i++) {
