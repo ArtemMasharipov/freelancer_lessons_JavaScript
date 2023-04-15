@@ -430,14 +430,13 @@ class TBankomat {
 		return minNominal;
 	}
 
-	get maxSum() {
-		const maxNominal = this.banknotes.reduce((acc, curr) => curr.nominal > acc ? curr.nominal : acc, 0);
-		if (maxNominal === 0) throw new Error('Банкноти в банкоматі відсутні');
-		return maxNominal;
+	get maxWithdrawalAmount() {
+		return this.banknotes.reduce((acc, curr) => acc + curr.nominal * curr.quantity, 0);
 	}
 
+
 	withdraw(sum) {
-		if (typeof sum !== 'number' || sum <= 5) throw new Error('Некоректна сума');
+		if (typeof sum !== 'number' || sum <= 50) throw new Error('Некоректна сума');
 
 		// сортування масиву за спаданням за номіналом банкнот
 		for (let i = 1; i < this.banknotes.length; i++) {
@@ -472,19 +471,18 @@ class TBankomat {
 }
 
 const banknotes = [
-	new Banknote(200, 5),
-	new Banknote(100, 10),
-	new Banknote(50, 20),
-	new Banknote(20, 50),
-	new Banknote(10, 100),
-	new Banknote(5, 200),
-]; 
+	new Banknote(1000, 5),
+	new Banknote(500, 10),
+	new Banknote(200, 20),
+	new Banknote(100, 50),
+	new Banknote(50, 100),
+];
 
 const tBankomat = new TBankomat(banknotes);
 
 console.log(`Загальна кількість грошей в банкоматі: ${tBankomat.totalAmount}`);
 console.log(`Мінімальна сума для зняття грошей: ${tBankomat.minSum}`);
-console.log(`Максимальна сума для зняття грошей: ${tBankomat.maxSum}`);
+console.log(`Максимальна сума для зняття грошей: ${tBankomat.maxWithdrawalAmount}`);
 
 const result = tBankomat.withdraw(400);
 console.log(`Ви зняли з банкомату суму: ${Object.keys(result).reduce((acc, curr) => acc + parseInt(curr) * result[curr], 0)}`);
