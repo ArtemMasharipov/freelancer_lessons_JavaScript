@@ -383,7 +383,7 @@ class History {
 		console.log(this.testsList);
 	}
 }
-
+// ----------------------------------------------------------------
 class TestData {
 	constructor(firstNum, secondNum, operation, userAnswer, correctAnswer) {
 		this.firstNum = firstNum;
@@ -393,7 +393,7 @@ class TestData {
 		this.correctAnswer = correctAnswer;
 	}
 }
-
+// ----------------------------------------------------------------
 class Checker {
 	constructor(firstNum, secondNum, operation) {
 		this.firstNum = firstNum;
@@ -411,7 +411,7 @@ class Checker {
 		return { userAnswer, isCorrect, correctAnswer: this.correctAnswer };
 	}
 }
-
+// ----------------------------------------------------------------
 class TestManager {
 	constructor() {
 		this.history = new History();
@@ -447,6 +447,6 @@ class TestManager {
 		return { firstNum, secondNum, operation };
 	}
 }
-
+// ----------------------------------------------------------------
 // const testManager = new TestManager();
 // testManager.runTests(3);
