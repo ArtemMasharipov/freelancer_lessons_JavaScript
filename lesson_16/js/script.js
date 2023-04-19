@@ -229,30 +229,30 @@ class Service {
 		this.Duration = duration;
 	}
 	// -----------------------------------------------------------------
-	get name() {
+	get Name() {
 		return this.#name;
 	}
 
-	get cost() {
+	get Cost() {
 		return this.#cost;
 	}
 
-	get duration() {
+	get Duration() {
 		return this.#duration;
 	}
 	// -----------------------------------------------------------------
 
-	set name(name) {
+	set Name(name) {
 		if (name.length === 0) throw new Error('Company name is incorrect')
 		this.#name = name;
 	}
 
-	set cost(cost) {
+	set Cost(cost) {
 		if (cost < 0) throw new Error('Price is incorrect')
 		this.#cost = cost;
 	}
 
-	set duration(duration) {
+	set Duration(duration) {
 		if (duration < 0) throw new Error('Duration is incorrect')
 		this.#duration = duration;
 	}
@@ -276,37 +276,37 @@ class Branch {
 		this.BuildingNumber = buildingNumber;
 	}
 
-	get country() {
+	get Country() {
 		return this.#country;
 	}
 
-	get city() {
+	get City() {
 		return this.#city;
 	}
 
-	get street() {
+	get Street() {
 		return this.#street;
 	}
 
-	get buildingNumber() {
+	get BuildingNumber() {
 		return this.#buildingNumber;
 	}
 
-	set country(country) {
+	set Country(country) {
 		this.#country = country;
 	}
 
-	set city(city) {
+	set City(city) {
 		if (city.length === 0) throw new Error('City name is incorrect');
 		this.#city = city;
 	}
 
-	set street(street) {
+	set Street(street) {
 		if (street.length === 0) throw new Error('Street name is incorrect');
 		this.#street = street;
 	}
 
-	set buildingNumber(buildingNumber) {
+	set BuildingNumber(buildingNumber) {
 		if (buildingNumber.length === 0) throw new Error('Building number is incorrect');
 		this.#buildingNumber = buildingNumber;
 	}
@@ -330,19 +330,19 @@ class Company {
 		this.Branches = [];
 	}
 
-	get name() {
+	get Name() {
 		return this.#name;
 	}
 
-	get foundedDate() {
+	get FoundedDate() {
 		return this.#foundedDate;
 	}
 
-	get services() {
+	get Services() {
 		return this.#services;
 	}
 
-	get branches() {
+	get Branches() {
 		return this.#branches;
 	}
 
