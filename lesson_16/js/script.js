@@ -407,8 +407,6 @@ console.log(`\nAccessible services: ${cheapServices}`);
 // максимальної та мінімальної сум, які може видати банкомат, та 
 // метод зняття деякої суми.
 // ================================================================
-console.log("--------------------Задача 4-------------------------")
-
 class Banknote {
 	constructor(nominal, quantity) {
 		this.nominal = nominal;
@@ -426,10 +424,15 @@ class TBankomat {
 	}
 
 	get minSum() {
-		const minNominal = this.banknotes.reduce((acc, curr) => curr.nominal < acc ? curr.nominal : acc, this.banknotes[0]?.nominal);
-		if (minNominal === undefined) throw new Error('Банкноти в банкоматі відсутні');
-		return minNominal;
+		const banknotesAvailable = this.banknotes.filter(banknote => banknote.quantity > 0);
+		if (banknotesAvailable.length === 0) throw new Error('Банкноти в банкоматі відсутні');
+
+		const minNominalBanknote = banknotesAvailable.reduce((acc, curr) => curr.nominal < acc.nominal ? curr : acc, banknotesAvailable[0]);
+
+		return minNominalBanknote.nominal;
 	}
+
+
 
 	get maxWithdrawalAmount() {
 		return this.banknotes.reduce((acc, curr) => acc + curr.nominal * curr.quantity, 0);
@@ -478,7 +481,7 @@ const banknotes = [
 	new Banknote(20, 50),
 	new Banknote(10, 100),
 	new Banknote(5, 200),
-]; 
+];
 
 const tBankomat = new TBankomat(banknotes);
 
@@ -486,8 +489,8 @@ console.log(`Загальна кількість грошей в банкома�
 console.log(`Мінімальна сума для зняття грошей: ${tBankomat.minSum}`);
 console.log(`Максимальна сума для зняття грошей: ${tBankomat.maxWithdrawalAmount}`);
 
-const result = tBankomat.withdraw(400);
+const result = tBankomat.withdraw(15);
 console.log(`Ви зняли з банкомату суму: ${Object.keys(result).reduce((acc, curr) => acc + parseInt(curr) * result[curr], 0)}`);
 console.log('Банкноти, які ви отримали:');
 console.log(result);
-console.log(`Грошей в банкоматі залишилось: ${tBankomat.totalAmount}`);
+console.log(`На рахунку залишилось: ${tBankomat.totalAmount}`);
