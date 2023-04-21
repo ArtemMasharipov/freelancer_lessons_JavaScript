@@ -216,7 +216,7 @@ document.getElementById('get-sum').addEventListener('click', () => {
 function calculateTotal() {
 
 	const STAGE_QUANTITY = 3;
-	const transportationCosts = { auto: 500, bus: 1000, plane: 1500 };
+	const transportationCosts = { auto: 500, bus: 1000, plane: 2000 };
 	let total = 0;
 
 	for (let i = 1; i <= STAGE_QUANTITY; i++) {
