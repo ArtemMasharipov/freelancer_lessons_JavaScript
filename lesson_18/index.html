@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Lesson 18</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>ДЗ. Урок №18. DOM, BOM, Document. Події - початок.</h1>
+		</header>
+		<main class="main">
+			<div class="card-container">
+
+				<div class="card">
+					<h2 class="card__title">Задача 1</h2>
+					<p class="card__description">Розробити калькулятор
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="num1">Number 1:</label>
+								<input type="number" value="0" id="num1"><br><br>
+
+								<label for="num2">Number 2:</label>
+								<input type="number" value="0" id="num2"><br><br>
+
+								<label for="num2">Result:</label>
+								<input type="number" value="0" id="result"><br><br>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button id="add">Додати</button>
+						<button id="subtract">Відняти</button>
+						<button id="multiply">Помножити</button>
+						<button id="divide">Поділити</button>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 2</h2>
+					<p class="card__description">Зробити конвертер валют (курси валют – константи у скрипті)
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="amount">Сума у гривнях:</label>
+								<input type="number" id="amount" value="0">
+								<div class="task-submit">
+									<button id="convert">Конвертувати</button>
+								</div>
+							</div>
+							<div class="card__input-group">
+								<label for="euro">Сума в євро:</label>
+								<input type="number" id="euro" value="0" readonly>
+							</div>
+							<div class="card__input-group">
+								<label for="dollar">Сума в доларах:</label>
+								<input type="number" id="dollar" value="0" readonly>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 3</h2>
+					<p class="card__description">Користувач задає рік народження. Визначити кількість років користувача.</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="birth-year">Рік народження:</label>
+								<input type="number" id="birth-year">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button id="calculate-age">Розрахувати</button>
+					</div><br>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="age">Вік:</label>
+								<input type="number" id="age" readonly>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="card">
+					<h2 class="card__title">Задача 4</h2>
+					<p class="card__description">
+						Наперед задано у скрипті масив зі списком бажань. Після завантаження сторінки випадковим
+						чином вибираються 3 і відображаються у окремих div (їх треба створити і додати на сторінку)
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<div id="wishlist-container">
+									<h2>Список бажань</h2>
+									<ul id="wishlist"></ul>
+								</div>
+								<div id="selected-wishes-container">
+									<h2>Вибрані бажання</h2>
+									<div id="selected-wishes"></div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<p id="resultTaskFour" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 5</h2>
+					<p class="card__description">
+						Відобразити таблицю 3*4 з випадковими числами (її треба динамічно створити і вставити на
+						сторінку)
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+							</div>
+						</div>
+					</div>
+					<div class="task-submit">
+						<button onclick="location.reload()">Вивести</button>
+						<p id="table_container_task5" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 6</h2>
+					<p class="card__description">
+						Користувач задає кількість оцінок і натискає на кнопку «get table». В результаті формується
+						таблиця з input, куди користувач вводить оцінки. Після цього натискає на кнопку “get sum” і знаходить
+						середнє значення.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<label for="num-grades">Введіть кількість оцінок:</label>
+								<input type="number" id="num-grades" min="1">
+								<button id="generate-table">Get Table</button>
+
+								<table id="grades-table">
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="task-submit" id="resultTaskSix">
+						<p id="average" class="card__result"></p>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 7</h2>
+					<p class="card__description">
+						Подорож складається з 3 етапів. На кожному етапі користувач може вибрати один з видів
+						транспорту (авто, автобус, літак - випадаючий список), харчування (сніданок, обід, вечеря – checkbоx)
+						та одного з 3-х гідів(використати - radio buttons). Ціни визначте самі. Підрахувати загальну вартість.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								
+								<section>
+									<h2>Перший день</h2>
+									<div>
+										<label for="transportation1">Транспорт:</label>
+										<select id="transportation1">
+											<option value="auto">Авто</option>
+											<option value="bus">Автобус</option>
+											<option value="plane">Літак</option>
+										</select>
+									</div>
+									<div>
+										<fieldset>
+											<legend>Харчування:</legend>
+											<label>
+												<input type="checkbox" id="breakfast1" name="meals1" value="50"> Сніданок
+											</label>
+											<label>
+												<input type="checkbox" id="lunch1" name="meals1" value="100"> Обід
+											</label>
+											<label>
+												<input type="checkbox" id="dinner1" name="meals1" value="150"> Вечеря
+											</label>
+										</fieldset>
+									</div>
+									<div>
+										<fieldset>
+											<legend>Гід:</legend>
+											<label>
+												<input type="radio" id="guide11" name="guide1" value="200"> Гід 1
+											</label>
+											<label>
+												<input type="radio" id="guide12" name="guide1" value="300"> Гід 2
+											</label>
+											<label>
+												<input type="radio" id="guide13" name="guide1" value="400"> Гід 3
+											</label>
+										</fieldset>
+									</div>
+								</section>
+								<section>
+									<h2>Другий день</h2>
+									<div>
+										<label for="transportation2">Транспорт:</label>
+										<select id="transportation2">
+											<option value="auto">Авто</option>
+											<option value="bus">Автобус</option>
+											<option value="plane">Літак</option>
+										</select>
+									</div>
+									<div>
+										<fieldset>
+											<legend>Харчування:</legend>
+											<label>
+												<input type="checkbox" id="breakfast2" name="meals2" value="50"> Сніданок
+											</label>
+											<label>
+												<input type="checkbox" id="lunch2" name="meals2" value="100"> Обід
+											</label>
+											<label>
+												<input type="checkbox" id="dinner2" name="meals2" value="150"> Вечеря
+											</label>
+										</fieldset>
+									</div>
+									<div>
+										<fieldset>
+											<legend>Гід:</legend>
+											<label>
+												<input type="radio" id="guide21" name="guide2" value="200"> Гід 1
+											</label>
+											<label>
+												<input type="radio" id="guide22" name="guide2" value="300"> Гід 2
+											</label>
+											<label>
+												<input type="radio" id="guide23" name="guide2" value="400"> Гід 3
+											</label>
+										</fieldset>
+									</div>
+
+								</section>
+								<section>
+									<h2>Третій день</h2>
+									<div>
+										<label for="transportation3">Транспорт:</label>
+										<select id="transportation3">
+											<option value="auto">Авто</option>
+											<option value="bus">Автобус</option>
+											<option value="plane">Літак</option>
+										</select>
+									</div>
+									<div>
+										<fieldset>
+											<legend>Харчування:</legend>
+											<label>
+												<input type="checkbox" id="breakfast3" name="meals3" value="50"> Сніданок
+											</label>
+											<label>
+												<input type="checkbox" id="lunch3" name="meals3" value="100"> Обід
+											</label>
+											<label>
+												<input type="checkbox" id="dinner3" name="meals3" value="150"> Вечеря
+											</label>
+										</fieldset>
+									</div>
+									<div>
+										<fieldset>
+											<legend>Гід:</legend>
+											<label>
+												<input type="radio" id="guide31" name="guide3" value="200"> Гід 1
+											</label>
+											<label>
+												<input type="radio" id="guide32" name="guide3" value="300"> Гід 2
+											</label>
+											<label>
+												<input type="radio" id="guide33" name="guide3" value="400"> Гід 3
+											</label>
+										</fieldset>
+									</div>
+								</section>
+								<div class="task-submit">
+									<button type="submit" onclick="calculateTotal()">Підрахувати</button>
+									<p id="total-cost" class="card__result"></p>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</main>
+		<footer class=" footer"></footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
