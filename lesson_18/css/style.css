@@ -156,8 +156,10 @@ p {
 /* ----------------------------------------------------- */
 
 fieldset label {
-	display: block;
+	display: flex;
+	align-items: center;
 	margin: 5px 0;
+	max-width: 155px;
  }
  
  fieldset label input[type="checkbox"],
