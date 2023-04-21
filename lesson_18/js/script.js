@@ -225,7 +225,7 @@ function calculateTotal() {
 		const meals = document.getElementsByName(`meals${i}`);
 		const guide = document.getElementsByName(`guide${i}`);
 		[...meals, ...guide].forEach(item => {
-			if (item.checked) total + parseInt(item.value);
+			if (item.checked) total += parseInt(item.value);
 		});
 	}
 	document.getElementById("total-cost").textContent = `Загальна вартість: ${total} грн`;
