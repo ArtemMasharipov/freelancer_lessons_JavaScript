@@ -230,11 +230,11 @@ function calculateTotal(stageQuantity) {
 		const guide = document.getElementsByName(`guide${i}`);
 
 		[...meals, ...guide].forEach(item => {
-			if (item.checked) total += parseInt(item.value);
+			if (item.checked) total += parseFloat(item.value);
 		});
 	}
 
-	document.getElementById("total-cost").textContent = `Загальна вартість: ${total} грн`;
+	document.getElementById("total-cost").textContent = `Загальна вартість: ${total.toFixed(2)} грн`;
 }
 
 const calculateBtn = document.getElementById("calculate-btn");
