@@ -194,7 +194,7 @@ class GradeTable {
 		const inputs = document.querySelectorAll('#grades-table input');
 		const sum = [...inputs].reduce((total, input) => total + parseInt(input.value) || 0, 0);
 		const average = sum / inputs.length || 0;
-		document.getElementById('average').textContent = `Average: ${average}`;
+		document.getElementById('average').textContent = `Average: ${average.toFixed(2)}`;
 	}
 }
 
@@ -204,10 +204,13 @@ document.getElementById('generate-table').addEventListener('click', () => {
 	gradeTable.generateTable(numGrades);
 });
 
-document.getElementById('get-sum').addEventListener('click', () => {
-	const gradeTable = new GradeTable();
-	gradeTable.getSum();
-});
+const getSumButton = document.getElementById('get-sum');
+if (getSumButton) {
+	getSumButton.addEventListener('click', () => {
+		const gradeTable = new GradeTable();
+		gradeTable.getSum();
+	});
+}
 // ================================================================
 // Задача 7. Подорож складається з 3 етапів. На кожному етапі 
 // користувач може вибрати один з видів транспорту (авто, автобус, 
@@ -215,23 +218,28 @@ document.getElementById('get-sum').addEventListener('click', () => {
 // checkbоx) та одного з 3-х гідів(використати  - radio buttons). 
 // Ціни визначте самі. Підрахувати загальну вартість.
 // ================================================================
-function calculateTotal() {
-
-	const STAGE_QUANTITY = 3;
+function calculateTotal(stageQuantity) {
 	const transportationCosts = { auto: 500, bus: 1000, plane: 2000 };
 	let total = 0;
 
-	for (let i = 1; i <= STAGE_QUANTITY; i++) {
+	for (let i = 1; i <= stageQuantity; i++) {
 		const transportation = document.getElementById(`transportation${i}`).value;
 		total += transportationCosts[transportation];
+
 		const meals = document.getElementsByName(`meals${i}`);
 		const guide = document.getElementsByName(`guide${i}`);
+
 		[...meals, ...guide].forEach(item => {
 			if (item.checked) total += parseInt(item.value);
 		});
 	}
+
 	document.getElementById("total-cost").textContent = `Загальна вартість: ${total} грн`;
 }
 
+const calculateBtn = document.getElementById("calculate-btn");
 
-
+calculateBtn.addEventListener("click", () => {
+	const STAGE_QUANTITY = 3;
+	calculateTotal(STAGE_QUANTITY);
+});
