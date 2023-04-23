@@ -136,7 +136,7 @@ class Table {
 		}
 	}
 
-	createTable() {
+	createTable(container) {
 		const table = document.createElement("table");
 
 		Object.assign(table.style, this.tableStyle);
@@ -152,18 +152,16 @@ class Table {
 			table.appendChild(tr);
 		}
 
-		this.container.innerHTML = '';
-		this.container.appendChild(table);
+		container.innerHTML = '';
+		container.appendChild(table);
 	}
 }
 
 // Створюємо нову таблицю та генеруємо дані
 const containerTaskFive = document.getElementById("table_container_task5");
-const table = new Table(3, 4, containerTaskFive);
+const table = new Table(3, 4);
 table.generateNumbers();
-
-// Виводимо таблицю
-table.createTable();
+table.createTable(containerTaskFive);
 // ================================================================
 // Задача 6. Користувач задає кількість оцінок і натискає на кнопку 
 // «get table». В результаті формується таблиця з input, куди 
