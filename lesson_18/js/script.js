@@ -104,10 +104,11 @@ wishlist.displayWishes();
 // (її треба динамічно створити і вставити на сторінку)
 // ================================================================
 class Table {
-	constructor(rows, cols) {
+	constructor(rows, cols, container) {
 		this.rows = rows;
 		this.cols = cols;
 		this.data = [];
+		this.container = container;
 
 		this.tableStyle = {
 			border: "1px solid black",
@@ -151,17 +152,18 @@ class Table {
 			table.appendChild(tr);
 		}
 
-		return table;
+		this.container.innerHTML = '';
+		this.container.appendChild(table);
 	}
 }
 
 // Створюємо нову таблицю та генеруємо дані
-const table = new Table(3, 4);
+const containerTaskFive = document.getElementById("table_container_task5");
+const table = new Table(3, 4, containerTaskFive);
 table.generateNumbers();
 
-// Додаємо таблицю на сторінку
-const containerTaskFive = document.getElementById("table_container_task5");
-containerTaskFive.appendChild(table.createTable());
+// Виводимо таблицю
+table.createTable();
 // ================================================================
 // Задача 6. Користувач задає кількість оцінок і натискає на кнопку 
 // «get table». В результаті формується таблиця з input, куди 
