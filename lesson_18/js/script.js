@@ -184,11 +184,11 @@ class GradeTable {
 		}
 		const button = document.querySelector('#resultTaskSix button') || document.createElement('button');
 		button.textContent = 'Get Average';
-		button.addEventListener('click', () => this.getSum());
+		button.addEventListener('click', () => this.showSum());
 		document.getElementById('resultTaskSix').prepend(button);
 	}
 
-	getSum() {
+	showSum() {
 		const inputs = document.querySelectorAll('#grades-table input');
 		const sum = [...inputs].reduce((total, input) => total + parseInt(input.value) || 0, 0);
 		const average = sum / inputs.length || 0;
@@ -206,7 +206,7 @@ const getSumButton = document.getElementById('get-sum');
 if (getSumButton) {
 	getSumButton.addEventListener('click', () => {
 		const gradeTable = new GradeTable();
-		gradeTable.getSum();
+		gradeTable.showSum();
 	});
 }
 // ================================================================
