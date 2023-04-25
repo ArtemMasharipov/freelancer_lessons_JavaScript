@@ -104,11 +104,14 @@ wishlist.displayWishes();
 // (її треба динамічно створити і вставити на сторінку)
 // ================================================================
 class Table {
-	constructor(rows, cols, container) {
+	constructor(rows, cols, container, minNum, maxNum) {
 		this.rows = rows;
 		this.cols = cols;
 		this.data = [];
 		this.container = container;
+
+		this.minNum = minNum;
+		this.maxNum = maxNum;
 
 		this.tableStyle = {
 			border: "1px solid black",
@@ -120,12 +123,12 @@ class Table {
 		};
 	}
 
-	generateNumbers(minNum, maxNum) {
+	generateNumbers() {
 		for (let i = 0; i < this.rows; i++) {
 			const row = [];
 
 			for (let j = 0; j < this.cols; j++) {
-				const randomNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+				const randomNum = Math.floor(Math.random() * (this.maxNum - this.minNum + 1)) + this.minNum;
 				row.push(randomNum);
 			}
 
@@ -156,8 +159,8 @@ class Table {
 
 // Створюємо нову таблицю та генеруємо дані
 const containerTaskFive = document.getElementById("table_container_task5");
-const table = new Table(3, 4);
-table.generateNumbers(10, 99);
+const table = new Table(3, 4, containerTaskFive, 10, 99);
+table.generateNumbers();
 table.createTable(containerTaskFive);
 // ================================================================
 // Задача 6. Користувач задає кількість оцінок і натискає на кнопку 
