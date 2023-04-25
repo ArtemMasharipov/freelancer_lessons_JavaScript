@@ -216,28 +216,29 @@ if (getSumButton) {
 // checkbоx) та одного з 3-х гідів(використати  - radio buttons). 
 // Ціни визначте самі. Підрахувати загальну вартість.
 // ================================================================
-function calculateTotal(stageQuantity) {
-	const transportationCosts = { auto: 500, bus: 1000, plane: 2000 };
-	let total = 0;
+function calculateTotal(stageQuantity, transportationCosts) {
+  let total = 0;
 
-	for (let i = 1; i <= stageQuantity; i++) {
-		const transportation = document.getElementById(`transportation${i}`).value;
-		total += transportationCosts[transportation];
+  for (let i = 1; i <= stageQuantity; i++) {
+    const transportation = document.getElementById(`transportation${i}`).value;
+    total += transportationCosts[transportation];
 
-		const meals = document.getElementsByName(`meals${i}`);
-		const guide = document.getElementsByName(`guide${i}`);
+    const meals = document.getElementsByName(`meals${i}`);
+    const guide = document.getElementsByName(`guide${i}`);
 
-		[...meals, ...guide].forEach(item => {
-			if (item.checked) total += parseFloat(item.value);
-		});
-	}
+    [...meals, ...guide].forEach(item => {
+      if (item.checked) total += parseFloat(item.value);
+    });
+  }
 
-	document.getElementById("total-cost").textContent = `Загальна вартість: ${total.toFixed(2)} грн`;
+  document.getElementById("total-cost").textContent = `Загальна вартість: ${total.toFixed(2)} грн`;
 }
 
 const calculateBtn = document.getElementById("calculate-btn");
+const transportationCosts = { auto: 500, bus: 1000, plane: 2000 };
 
 calculateBtn.addEventListener("click", () => {
-	const STAGE_QUANTITY = 3;
-	calculateTotal(STAGE_QUANTITY);
+  const STAGE_QUANTITY = 3;
+  calculateTotal(STAGE_QUANTITY, transportationCosts);
 });
+
