@@ -120,15 +120,12 @@ class Table {
 		};
 	}
 
-	generateNumbers() {
-		const MIN_NUM = 10;
-		const MAX_NUM = 99;
-
+	generateNumbers(minNum, maxNum) {
 		for (let i = 0; i < this.rows; i++) {
 			const row = [];
 
 			for (let j = 0; j < this.cols; j++) {
-				const randomNum = Math.floor(Math.random() * (MAX_NUM - MIN_NUM + 1)) + MIN_NUM;
+				const randomNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 				row.push(randomNum);
 			}
 
@@ -160,7 +157,7 @@ class Table {
 // Створюємо нову таблицю та генеруємо дані
 const containerTaskFive = document.getElementById("table_container_task5");
 const table = new Table(3, 4);
-table.generateNumbers();
+table.generateNumbers(10, 99);
 table.createTable(containerTaskFive);
 // ================================================================
 // Задача 6. Користувач задає кількість оцінок і натискає на кнопку 
