@@ -35,28 +35,28 @@ class ProductCard {
 const containerTaskOne = document.querySelector("#card__product-container");
 
 const product1 = new ProductCard(
-	"../img/laptop_1.png",
+	"./img/laptop_1.png",
 	"Ноутбук Lenovo IdeaPad L3 15ITL6 (82HL00HCRA) Platinum Grey / Intel Core i3-1115G4 / RAM 8 ГБ / SSD 512 ГБ",
 	"16 999"
 );
 product1.render(containerTaskOne);
 
 const product2 = new ProductCard(
-	"../img/laptop_2.png",
+	"./img/laptop_2.png",
 	"Ноутбук ASUS TUF Gaming A15 FA506ICB-HN119 (90NR0667-M00KT0) Graphite Black / AMD Ryzen 5 4600H / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce RTX 3050",
 	"35 999"
 );
 product2.render(containerTaskOne);
 
 const product3 = new ProductCard(
-	"../img/laptop_3.png",
+	"./img/laptop_3.png",
 	"Ноутбук Apple MacBook Air 13\" M1 256GB 2020 (MGN63) Space Gray",
 	"43 499"
 );
 product3.render(containerTaskOne);
 
 const product4 = new ProductCard(
-	"../img/laptop_4.png",
+	"./img/laptop_4.png",
 	"Ноутбук ASUS Laptop X515EA-BQ2066 (90NB0TY1-M00VF0) Slate Grey / Intel Core i3-1115G4 / RAM 12 ГБ / SSD 512 ГБ",
 	"19 999"
 );
@@ -113,7 +113,7 @@ class SportPlayersList {
 			playerItem.appendChild(playerName);
 
 			const arrowIcon = document.createElement("img");
-			arrowIcon.src = `../img/${iconClass}.png`;
+			arrowIcon.src = `./img/${iconClass}.png`;
 			arrowIcon.alt = altText;
 			arrowIcon.className = "arrow-icon";
 			arrowIcon.addEventListener("click", () => {
