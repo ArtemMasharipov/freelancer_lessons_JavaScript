@@ -192,78 +192,60 @@ setInterval(createSnowflake, 100);
 // з’являтися у іншій випадковій позиції.
 // ================================================================
 class Star {
-	constructor(container) {
+	constructor(container, minSize = 1, maxSize = 4, minInterval = 200, maxInterval = 1000) {
 		this.container = container;
-		this.size = 1;
-		this.maxSize = Math.random() * 5 + 2;
-		this.step = Math.random() * 0.5 + 0.5;
-		this.intervalId = null;
-		this.checkCollision = null;
-		this.x = null;
-		this.y = null;
+		this.minSize = minSize;
+		this.maxSize = maxSize;
+		this.minInterval = minInterval;
+		this.maxInterval = maxInterval;
+		this.timer = null;
 		this.create();
 	}
 
 	create() {
-		this.element = document.createElement('div');
-		this.element.classList.add('star');
-		this.element.style.left = `${Math.random() * 100}%`;
-		this.element.style.top = `${Math.random() * 100}%`;
-		this.container.appendChild(this.element);
-		this.animate();
-	}
+		const star = document.createElement('div');
+		star.className = 'star';
+		star.style.width = `${this.minSize}px`;
+		star.style.height = `${this.minSize}px`;
+		star.style.top = `${Math.random() * 100}%`;
+		star.style.left = `${Math.random() * 100}%`;
+		this.container.appendChild(star);
 
-	animate() {
-		this.intervalId = setInterval(() => {
-			this.size += this.step;
-			this.element.style.width = `${this.size}px`;
-			this.element.style.height = `${this.size}px`;
-			this.element.style.opacity = `${this.size / this.maxSize}`;
-			if (this.size >= this.maxSize) {
-				clearInterval(this.intervalId);
-				this.x = this.element.offsetLeft;
-				this.y = this.element.offsetTop;
-			}
-		}, Math.random() * 100 + 50);
+		let size = this.minSize;
+		let interval = Math.random() * (this.maxInterval - this.minInterval) + this.minInterval;
+		this.timer = setInterval(() => {
+			size += 1;
+			star.style.width = `${size}px`;
+			star.style.height = `${size}px`;
 
-		this.checkCollision = setInterval(() => {
-			const newStarX = this.element.offsetLeft + this.maxSize / 2;
-			const newStarY = this.element.offsetTop + this.maxSize / 2;
-			for (const existingStar of stars) {
-				const distance = Math.sqrt((existingStar.x - newStarX) ** 2 + (existingStar.y - newStarY) ** 2);
-				if (distance < existingStar.maxSize / 2 + this.maxSize / 2 + 2) {
-					clearInterval(this.intervalId);
-					clearInterval(this.checkCollision);
-					this.element.remove();
-					return;
-				}
+			if (size >= this.maxSize) {
+				clearInterval(this.timer);
+				star.remove();
+				this.create();
 			}
-		}, 10);
+		}, interval);
 	}
 }
 
-const starContainer = document.getElementById('stars-container');
-const stars = [];
-
-function createStars(numStars) {
-	for (let i = 0; i < numStars; i++) {
-		stars.push(new Star(starContainer));
-	}
+const container = document.getElementById('stars-container');
+const numStars = 50;
+for (let i = 0; i < numStars; i++) {
+	new Star(container, 1, 4, 200, 1000);
 }
-
-setInterval(() => {
-	createStars(40);
-}, 500);
 // ================================================================
 // Задача 5. Байрактар. З верхньої частини екрану у випадковій 
 // позиції по горизонталі з’являються танки, які їдуть вниз. 
 // При кліку на танк він вибухає і зникає з екрану. 
 // ================================================================
 class TankGame {
-	constructor(container, maxTanks) {
+	constructor(container, maxTanks, tankSpeed) {
 		this.container = container;
 		this.tanks = [];
 		this.maxTanks = maxTanks;
+		this.tankSpeed = tankSpeed;
+	}
+
+	startGame() {
 		this.createTankInterval = setInterval(() => this.createTank(), 1500);
 		this.container.addEventListener("click", (event) => this.handleTankClick(event));
 	}
@@ -272,21 +254,24 @@ class TankGame {
 		if (this.tanks.length < this.maxTanks) {
 			const tank = document.createElement("div");
 			tank.classList.add("tank");
-			const tankWidth = tank.offsetWidth;
-			const maxHorizontalPosition = this.container.offsetWidth - tankWidth - 60;
-			const randomHorizontalPosition = Math.floor(Math.random() * maxHorizontalPosition) + 10;
-			tank.style.left = `${randomHorizontalPosition}px`;
+			tank.style.left = `${this.createRandomPosition(tank)}px`;
 			this.container.appendChild(tank);
 			this.tanks.push(tank);
-			this.moveTank(tank);
+			this.moveTank(tank, this.tankSpeed);
 		}
 	}
 
-	moveTank(tank) {
-		const speed = 1;
+	createRandomPosition(tank) {
+		const tankWidth = tank.offsetWidth;
+		const maxHorizontalPosition = this.container.offsetWidth - tankWidth - 60;
+		return Math.floor(Math.random() * maxHorizontalPosition) + 10;
+	}
+
+
+	moveTank(tank, speed) {
 		const move = () => {
-			const topPosition = tank.offsetTop;
-			const newTopPosition = topPosition + speed;
+			const { offsetTop } = tank;
+			const newTopPosition = offsetTop + speed;
 			if (newTopPosition > this.container.offsetHeight) {
 				const index = this.tanks.indexOf(tank);
 				if (index !== -1) {
@@ -300,22 +285,35 @@ class TankGame {
 		window.requestAnimationFrame(move);
 	}
 
+	createExplosion(tank) {
+		const explosion = document.createElement("div");
+		explosion.classList.add("explosion");
+		explosion.style.top = `${tank.offsetTop}px`;
+		explosion.style.left = `${tank.offsetLeft}px`;
+		this.container.appendChild(explosion);
+		setTimeout(() => {
+			this.container.removeChild(explosion);
+		}, 500);
+	}
 
+	removeTank(tank) {
+		this.container.removeChild(tank);
+		const index = this.tanks.indexOf(tank);
+		this.tanks.splice(index, 1);
+	}
 
 	handleTankClick(event) {
 		const tank = event.target;
 		if (tank.classList.contains("tank")) {
 			if (this.container.contains(tank)) {
-				tank.classList.add("explosion");
-				setTimeout(() => {
-					this.container.removeChild(tank);
-					const index = this.tanks.indexOf(tank);
-					this.tanks.splice(index, 1);
-				}, 500);
+				this.createExplosion(tank);
+				this.removeTank(tank);
 			}
 		}
 	}
+
 }
 
 const containerTaskFive = document.getElementById("game-container");
-const game = new TankGame(containerTaskFive, 10);
+const game = new TankGame(containerTaskFive, 10, 1);
+game.startGame();
