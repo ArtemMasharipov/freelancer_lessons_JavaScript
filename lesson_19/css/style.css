@@ -307,8 +307,8 @@ input {
   width: 40px;
   height: 60px;
   border-radius: 15px;
-  background: #4b5320; /* зелений військовий колір захисний */
-  background: radial-gradient(#4b5320, #1e4620); /* плямистий ефект */
+  background: #4b5320;
+  background: radial-gradient(#4b5320, #1e4620); 
   box-shadow: inset 0 0 5px 2px rgba(108, 170, 95, 0.3);
 }
 
