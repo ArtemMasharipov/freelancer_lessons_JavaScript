@@ -1,4 +1,4 @@
-//Homework_lesson_18. DOM. BOM. Document. Events - beginning.
+//Homework_lesson_19. Practice.
 "use strict";
 // ================================================================
 // Задача 1. Відображаємо картки товарів, які користувач може 
