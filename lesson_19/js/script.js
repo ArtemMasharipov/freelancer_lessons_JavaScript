@@ -260,75 +260,62 @@ setInterval(() => {
 // При кліку на танк він вибухає і зникає з екрану. 
 // ================================================================
 class TankGame {
-	constructor(container) {
+	constructor(container, maxTanks) {
 		this.container = container;
 		this.tanks = [];
-		this.createTank();
-		setInterval(() => {
-			this.createTank();
-		}, 400);
+		this.maxTanks = maxTanks;
+		this.createTankInterval = setInterval(() => this.createTank(), 1500);
+		this.container.addEventListener("click", (event) => this.handleTankClick(event));
 	}
 
 	createTank() {
-		const tank = document.createElement('div');
-		tank.classList.add('tank');
-		tank.style.top = '0';
-		tank.style.left = `${this.getRandomPosition()}px`;
-		this.container.appendChild(tank);
-		this.tanks.push(tank);
-		this.moveTank(tank);
+		if (this.tanks.length < this.maxTanks) {
+			const tank = document.createElement("div");
+			tank.classList.add("tank");
+			const tankWidth = tank.offsetWidth;
+			const maxHorizontalPosition = this.container.offsetWidth - tankWidth - 60;
+			const randomHorizontalPosition = Math.floor(Math.random() * maxHorizontalPosition) + 10;
+			tank.style.left = `${randomHorizontalPosition}px`;
+			this.container.appendChild(tank);
+			this.tanks.push(tank);
+			this.moveTank(tank);
+		}
 	}
 
 	moveTank(tank) {
-		const intervalId = setInterval(() => {
-			const top = parseInt(tank.style.top);
-			tank.style.top = `${top + 5}px`;
-			if (top >= window.innerHeight - 100) {
-				clearInterval(intervalId);
-				this.container.removeChild(tank);
-				this.tanks = this.tanks.filter((t) => t !== tank);
+		const speed = 1;
+		const move = () => {
+			const topPosition = tank.offsetTop;
+			const newTopPosition = topPosition + speed;
+			if (newTopPosition > this.container.offsetHeight) {
+				const index = this.tanks.indexOf(tank);
+				if (index !== -1) {
+					this.tanks.splice(index, 1);
+				}
+			} else {
+				tank.style.top = `${newTopPosition}px`;
+				window.requestAnimationFrame(move);
 			}
-		}, 100);
+		};
+		window.requestAnimationFrame(move);
 	}
 
-	getRandomPosition() {
-		let position = Math.floor(Math.random() * (this.container.clientWidth - 100));
-		for (let tank of this.tanks) {
-			if (position >= parseInt(tank.style.left) - 100 && position <= parseInt(tank.style.left) + 100) {
-				position = this.getRandomPosition();
-				break;
+
+
+	handleTankClick(event) {
+		const tank = event.target;
+		if (tank.classList.contains("tank")) {
+			if (this.container.contains(tank)) {
+				tank.classList.add("explosion");
+				setTimeout(() => {
+					this.container.removeChild(tank);
+					const index = this.tanks.indexOf(tank);
+					this.tanks.splice(index, 1);
+				}, 500);
 			}
 		}
-		return position;
-	}
-
-	addTankExplosion(tank) {
-		const explosion = document.createElement('div');
-		explosion.classList.add('explosion');
-		explosion.style.top = tank.style.top;
-		explosion.style.left = tank.style.left;
-		this.container.appendChild(explosion);
-		setTimeout(() => {
-			this.container.removeChild(explosion);
-		}, 1000);
-	}
-
-	addEventListeners() {
-		this.container.addEventListener('click', (event) => {
-			const clickedTank = event.target.closest('.tank');
-			if (clickedTank) {
-				this.addTankExplosion(clickedTank);
-				this.container.removeChild(clickedTank);
-				this.tanks = this.tanks.filter((t) => t !== clickedTank);
-			}
-		});
-	}
-
-	start() {
-		this.addEventListeners();
 	}
 }
 
-const containerTaskFive = document.getElementById('game-container');
-const game = new TankGame(containerTaskFive);
-game.start();
+const containerTaskFive = document.getElementById("game-container");
+const game = new TankGame(containerTaskFive, 10);
