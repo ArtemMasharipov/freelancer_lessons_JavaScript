@@ -295,6 +295,7 @@ input {
 }
 /* -----------------------Задача_5---------------------------- */
 #game-container {
+  border-radius: 5px;
   position: relative;
   width: 100%;
   height: 300px;
