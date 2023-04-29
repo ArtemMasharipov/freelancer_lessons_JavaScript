@@ -202,7 +202,7 @@ class Star {
 		this.create();
 	}
 
-	create() {
+	createStar() {
 		const star = document.createElement('div');
 		star.className = 'star';
 		star.style.width = `${this.minSize}px`;
@@ -210,7 +210,10 @@ class Star {
 		star.style.top = `${Math.random() * 100}%`;
 		star.style.left = `${Math.random() * 100}%`;
 		this.container.appendChild(star);
+		return star;
+	}
 
+	animateStar(star) {
 		let size = this.minSize;
 		let interval = Math.random() * (this.maxInterval - this.minInterval) + this.minInterval;
 		this.timer = setInterval(() => {
@@ -224,6 +227,11 @@ class Star {
 				this.create();
 			}
 		}, interval);
+	}
+
+	create() {
+		const star = this.createStar();
+		this.animateStar(star);
 	}
 }
 
