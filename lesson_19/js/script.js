@@ -296,7 +296,7 @@ class TankGame {
 	createExplosion(tank) {
 		const explosion = document.createElement("div");
 		explosion.classList.add("explosion");
-		explosion.style.top = `${tank.offsetTop}px`;
+		explosion.style.top = `${tank.offsetTop + tank.offsetHeight / 2}px`;
 		explosion.style.left = `${tank.offsetLeft}px`;
 		this.container.appendChild(explosion);
 		setTimeout(() => {
