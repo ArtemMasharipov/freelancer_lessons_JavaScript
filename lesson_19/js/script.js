@@ -77,10 +77,12 @@ class SportPlayer {
 }
 
 class SportPlayersList {
-	constructor(players, selectedPlayers, container) {
+	constructor(players, selectedPlayers, container, greenArrowIcon, redArrowIcon) {
 		this.players = players;
 		this.selectedPlayers = selectedPlayers;
 		this.container = container;
+		this.greenArrowIcon = greenArrowIcon;
+		this.redArrowIcon = redArrowIcon;
 		this.render();
 	}
 
@@ -93,58 +95,101 @@ class SportPlayersList {
 		}
 	}
 
-	createPlayersList(list, headerText, className, iconClass, altText, onClickFunction) {
-		const playersDiv = document.createElement("div");
-		playersDiv.className = className;
-
-		const playersList = document.createElement("ul");
-		playersList.className = `${className}-list`;
-
-		const playersHeader = document.createElement("h3");
-		playersHeader.textContent = headerText;
+	createPlayersList(list, headerText, className, iconPath, altText, onClickFunction) {
+		const playersDiv = this.createPlayersDiv(className);
+		const playersList = this.createPlayersListElement(className);
+		const playersHeader = this.createPlayersHeader(headerText);
 		playersDiv.appendChild(playersHeader);
 
 		list.forEach(player => {
-			const playerItem = document.createElement("li");
-			playerItem.className = `${className}-item`;
-
-			const playerName = document.createElement("span");
-			playerName.textContent = player.name;
-			playerItem.appendChild(playerName);
-
-			const arrowIcon = document.createElement("img");
-			arrowIcon.src = `./img/${iconClass}.png`;
-			arrowIcon.alt = altText;
-			arrowIcon.className = "arrow-icon";
-			arrowIcon.addEventListener("click", () => {
-				onClickFunction(player);
-			});
-
+			const playerItem = this.createPlayerItem(className, player.name);
+			const arrowIcon = this.createArrowIcon(iconPath, altText, onClickFunction, player);
 			playerItem.appendChild(arrowIcon);
 			playersList.appendChild(playerItem);
 		});
 
 		playersDiv.appendChild(playersList);
-
 		return playersDiv;
+	}
+
+	createPlayersDiv(className) {
+		const playersDiv = document.createElement("div");
+		playersDiv.className = className;
+		return playersDiv;
+	}
+
+	createPlayersListElement(className) {
+		const playersList = document.createElement("ul");
+		playersList.className = `${className}-list`;
+		return playersList;
+	}
+
+	createPlayersHeader(headerText) {
+		const playersHeader = document.createElement("h3");
+		playersHeader.textContent = headerText;
+		return playersHeader;
+	}
+
+	createPlayerItem(className, playerName) {
+		const playerItem = document.createElement("li");
+		playerItem.className = `${className}-item`;
+
+		const playerNameElement = document.createElement("span");
+		playerNameElement.textContent = playerName;
+		playerItem.appendChild(playerNameElement);
+
+		return playerItem;
+	}
+
+	createArrowIcon(iconPath, altText, onClickFunction, player) {
+		const arrowIcon = document.createElement("img");
+		arrowIcon.src = iconPath;
+		arrowIcon.alt = altText;
+		arrowIcon.className = "arrow-icon";
+		arrowIcon.addEventListener("click", () => {
+			onClickFunction(player);
+		});
+		return arrowIcon;
 	}
 
 	render() {
 		this.container.innerHTML = "";
+		this.renderAvailablePlayers();
+		this.renderSelectedPlayers();
+	}
 
-		const availablePlayersDiv = this.createPlayersList(this.players, "Загальний список", "available-players", "green_arrow", "Add", player => {
-			this.addOrRemovePlayer(player, this.players, this.selectedPlayers);
-		});
+	renderAvailablePlayers() {
+		const availablePlayersDiv = this.createPlayersList(
+			this.players,
+			"Загальний список",
+			"available-players",
+			this.greenArrowIcon,
+			"Add",
+			player => {
+				this.addOrRemovePlayer(player, this.players, this.selectedPlayers);
+			}
+		);
+		this.addPlayersListToContainer(availablePlayersDiv);
+	}
 
-		const selectedPlayersDiv = this.createPlayersList(this.selectedPlayers, "Обрані для змагання", "selected-players", "red_arrow", "Remove", player => {
-			this.addOrRemovePlayer(player, this.selectedPlayers, this.players);
-		});
+	renderSelectedPlayers() {
+		const selectedPlayersDiv = this.createPlayersList(
+			this.selectedPlayers,
+			"Обрані для змагання",
+			"selected-players",
+			this.redArrowIcon,
+			"Remove",
+			player => {
+				this.addOrRemovePlayer(player, this.selectedPlayers, this.players);
+			}
+		);
+		this.addPlayersListToContainer(selectedPlayersDiv);
+	}
 
-		this.container.appendChild(availablePlayersDiv);
-		this.container.appendChild(selectedPlayersDiv);
+	addPlayersListToContainer(playersList) {
+		this.container.appendChild(playersList);
 	}
 }
-
 
 // Створення списку спортсменів
 const players = [
@@ -158,10 +203,10 @@ const players = [
 // Створення списку вибраних спортсменів
 const selectedPlayers = [];
 
-// Створення списку спортсменів та його рендерінг 
 const containerTaskTwo = document.getElementById("players-list-container");
-const sportPlayersList = new SportPlayersList(players, selectedPlayers, containerTaskTwo);
-
+const greenArrowIcon = "./img/green_arrow.png";
+const redArrowIcon = "./img/red_arrow.png";
+const sportPlayersList = new SportPlayersList(players, selectedPlayers, containerTaskTwo, greenArrowIcon, redArrowIcon);
 // ================================================================
 // Задача 3. Відобразити падаючий сніг. Сніжинка з’являється у 
 // верхній частині екрану і з випадковою швидкістю рухається вниз. 
