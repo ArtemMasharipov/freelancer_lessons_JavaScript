@@ -312,7 +312,7 @@ class Form {
 		const input = document.createElement('input');
 		input.type = type;
 		input.name = name;
-		input.placeholder = `Input ${labelText.toLowerCase()}`;
+		input.placeholder = `Enter ${labelText.toLowerCase()}`;
 		input.id = name;
 		return input;
 	}
