@@ -268,10 +268,9 @@ tableNames.map((name) => new Table(containerTaskFour, name, 3, 3));
 // автоматично замінювати значення його на 0.
 // ================================================================
 class Form {
-	constructor(container, labels, names) {
+	constructor(container, fields) {
 		this.container = container;
-		this.labels = labels;
-		this.names = names;
+		this.fields = fields;
 		this.form = this.createForm();
 		this.addClickHandler();
 	}
@@ -280,9 +279,9 @@ class Form {
 		const form = document.createElement('form');
 		form.classList.add('form');
 
-		for (let i = 0; i < this.labels.length; i++) {
-			const label = this.createLabel(this.labels[i], this.names[i]);
-			const input = this.createInput('number', this.names[i]);
+		for (const field of this.fields) {
+			const label = this.createLabel(field.label, field.name);
+			const input = this.createInput('number', field.name);
 			const formGroup = this.createFormGroup(label, input);
 
 			form.appendChild(formGroup);
@@ -308,11 +307,11 @@ class Form {
 		return label;
 	}
 
-	createInput(type, labelText, name) {
+	createInput(type, name) {
 		const input = document.createElement('input');
 		input.type = type;
 		input.name = name;
-		input.placeholder = `Enter ${labelText.toLowerCase()}`;
+		input.placeholder = `Input ${name.toLowerCase()}`;
 		input.id = name;
 		return input;
 	}
@@ -327,9 +326,14 @@ class Form {
 }
 
 const containerTaskFive = document.getElementById('my-form');
-const labels = ['Age', 'Height', 'Weight', 'Salary', 'Experience', 'Department', 'Serial Number'];
-const names = ['age', 'height', 'weight', 'salary', 'experience', 'department', 'serial-number'];
+const fields = [
+	{ label: 'Age', name: 'age' },
+	{ label: 'Height', name: 'height' },
+	{ label: 'Weight', name: 'weight' },
+	{ label: 'Salary', name: 'salary' },
+	{ label: 'Experience', name: 'experience' },
+	{ label: 'Department', name: 'department' },
+	{ label: 'Serial Number', name: 'serial-number' },
+];
 
-const formTaskFive = new Form(containerTaskFive, labels, names);
-
-
+const formTaskFive = new Form(containerTaskFive, fields);
