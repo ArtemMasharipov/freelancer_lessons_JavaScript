@@ -245,12 +245,14 @@ class Table {
 
 	// метод для виділення таблиці червоною рамкою
 	highlightTable(table) {
-		// знімаємо рамку з усіх таблиць
-		const tables = this.container.getElementsByTagName('table');
-		for (let i = 0; i < tables.length; i++) {
-			tables[i].classList.remove('highlighted');
+		const highlightedTable = this.container.querySelector('.highlighted');
+
+		// Знімаємо рамку з попередньо виділеної таблиці
+		if (highlightedTable) {
+			highlightedTable.classList.remove('highlighted');
 		}
-		// додаємо рамку до вибраної таблиці
+
+		// Додаємо рамку до вибраної таблиці
 		table.classList.add('highlighted');
 	}
 }
