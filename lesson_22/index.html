@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Lesson 22</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>ДЗ. Урок №22. Успадкування. Обробка виключних ситуацій (помилок).</h1>
+		</header>
+		<main class="main">
+			<div class="card-container">
+
+				<div class="card">
+					<h2 class="card__title">Задача 1</h2>
+					<p class="card__description">Створити клас Client<br><br>
+						Властивості:<br>
+						- ID<br>
+						- ПІБ<br>
+						- Кількість грошей на рахунку<br>
+						Методи:<br>
+						- Додавання грошей<br>
+						- Зняття грошей<br>
+						- ToString<br><br>
+
+						На основі цього класу створити клас GoldenClient<br>
+						Властивості:<br>
+						- ID<br>
+						- ПІБ<br>
+						- Кількість грошей на рахунку<br>
+						- Ліміт кредитних коштів<br>
+						- Відсоток за використання кредитних коштів<br>
+						Методи:<br>
+						- Додавання грошей<br>
+						- Зняття грошей<br>
+						- Визначення пені за використання кредитних коштів<br>
+						- ToString<br><br>
+
+						Створити клас Bank, у якому зберігається масив клієнтів.<br>
+						Виконати такі операції:<br>
+						- Вивести усіх простих клієнтів;<br>
+						- Вивести усіх клієнтів GoldenClient;<br>
+						- Знайти сумарну кількість грошей на рахунку;<br>
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<div id="card__task-one-container"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 2</h2>
+					<p class="card__description">Розробити Класи<br><br>
+
+						House<br>
+						--- властивості ---<br>
+						Координата Х<br>
+						Координата У<br>
+						шлях до зображення<br>
+						інтервал оновлення<br>
+						--- методи ---
+						генерування елемента розмітки<br>
+						оновлення через вказаний інтервал (збільшення або зменшення масштабу (об’єкт не рухається)<br><br>
+
+						Dog<br>
+						--- властивості ---<br>
+						Координата Х<br>
+						Координата У
+						шлях до зображення<br>
+						інтервал оновлення<br>
+						--- методи ---<br>
+						генерування елемента розмітки<br>
+						оновлення через вказаний інтервал (випадкове зміщення по горизонталі (зміна координати Х))<br><br>
+
+						Bird<br>
+						--- властивості ---<br>
+						Координата Х<br>
+						Координата У<br>
+						шлях до зображення<br>
+						інтервал оновлення<br>
+						--- методи ---<br>
+						генерування елемента розмітки<br>
+						оновлення через вказаний інтервал (випадкове переміщення у довільному напрямку)<br><br>
+
+						Подумайте яким має бути спільний клас предок.
+					</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<div id="creature-container"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2 class="card__title">Задача 3</h2>
+					<p class="card__description">Користувач задає місяць навчання учня (перевіряти чи є числом, чи
+						від 1 до 12, чи не канікули) та оцінку (перевіряти чи є числом, чи від 1 до 100). Вивести чи зможе він
+						виправити оцінку (якщо оцінка погана і це не останній місяць у семестрі) . Обробку усіх помилок
+						зробити з використанням відповідних класів.</p>
+					<div class="card__input-container">
+						<div class="card__input-column">
+							<div class="card__input-group">
+								<div id="taskThreeContainer">
+								</div>
+							</div>
+							<div id="card__button-taskThreeContainer"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</main>
+		<footer class=" footer"></footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
