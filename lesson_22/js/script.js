@@ -156,7 +156,7 @@ console.log(bank.getSimpleClients());
 console.log("Golden Clients:");
 console.log(bank.getGoldenClients());
 
-console.log("Total Balance:", bank.getTotalBalance());
+console.log(`Total Balance: ${bank.getTotalBalance()}`);
 // ================================================================
 // --------------------------Задача 2------------------------------
 // ================================================================
