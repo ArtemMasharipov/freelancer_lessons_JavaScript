@@ -374,7 +374,7 @@ class EvaluationSystem {
 
 		// Перевірка, чи не є місяць канікулами
 		if (this.vacationMonths.includes(parsedMonth)) {
-			throw new InvalidMonthError("Місяць навчання є канікулами.");
+			throw new InvalidMonthError("Місяць є канікулами.");
 		}
 
 		return parsedMonth;
