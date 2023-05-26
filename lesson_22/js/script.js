@@ -299,7 +299,7 @@ dog.generateMarkup();
 const birdOptions = {
 	x: 0,
 	y: 0,
-	imagePath: '/img/hummingbird.jpg',
+	imagePath: 'img/hummingbird.jpg',
 	container: containerTaskTwo,
 	maxShift: 5,
 	updateInterval: 150
