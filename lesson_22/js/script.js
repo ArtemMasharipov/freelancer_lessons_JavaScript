@@ -275,7 +275,7 @@ const containerTaskTwo = document.getElementById('creature-container');
 const houseOptions = {
 	x: 0,
 	y: 0,
-	imagePath: './img/house.jpg',
+	imagePath: '/img/house.jpg',
 	container: containerTaskTwo,
 	minScale: 0.85,
 	maxScale: 1,
@@ -299,7 +299,7 @@ dog.generateMarkup();
 const birdOptions = {
 	x: 0,
 	y: 0,
-	imagePath: './img/hummingbird.jpg',
+	imagePath: '/img/hummingbird.jpg',
 	container: containerTaskTwo,
 	maxShift: 5,
 	updateInterval: 150
