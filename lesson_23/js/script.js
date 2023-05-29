@@ -188,7 +188,7 @@ console.log('---------------------String-------------------------');
 console.log('=====================Задача 1=======================');
 
 function findStringsContainingDigits(strings) {
-	const regex = /\d/; // Регулярний вираз для перевірки наявності цифр
+	const regex = /\d/;
 
 	const result = [];
 
