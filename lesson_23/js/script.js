@@ -138,9 +138,9 @@ console.log(`Час сортування методом вставки: ${insert
 // ================================================================
 console.log('=====================Задача 4=======================');
 
-function generateRandomNumber(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// function generateRandomNumber(min, max) {
+// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
 
 function calculateSum(minRange, maxRange) {
 	const number1 = generateRandomNumber(minRange, maxRange);
