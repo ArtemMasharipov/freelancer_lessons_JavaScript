@@ -308,7 +308,7 @@ console.log(numbers);
 console.log('=====================Задача 7=======================');
 
 const textTaskSeven = "Lorem ipsum (dolor) sit amet, consectetur [adipiscing] elit.";
-const delimiters = /[.,!?;:"'(){}\[\]<>]/g;
+const delimiters = /[\.,!?;:"'(){}\[\]<>]/g;
 
 const punctuationMarks = textTaskSeven.match(delimiters);
 
