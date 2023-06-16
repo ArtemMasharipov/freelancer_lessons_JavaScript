@@ -354,14 +354,14 @@ function showRandomTodo() {
 }
 
 // Починаємо періодичний вивід задач
-const intervalId = setInterval(showRandomTodo, 5000);
+// const intervalId = setInterval(showRandomTodo, 5000);
 
 // Приклад використання:
 
 const initialTodoList = ["Справа 1", "Справа 2", "Справа 3"];
 
 // Завантажуємо список справ з localStorage, якщо він існує
-const storedList = getTodoList();
+// const storedList = getTodoList();
 
 // Перевіряємо, чи в localStorage вже є список справ
 if (storedList.length === 0) {
