@@ -90,7 +90,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     padding: 0 10px;
-    margin-top: 120px;
+    margin-top: 220px;
   }
 
   .card {
@@ -177,8 +177,16 @@ input {
 }
 
 .display-container {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 1px solid #000;
-}
+	width: 30%; /* Задаємо відносний розмір ширини контейнера */
+	padding-bottom: 30%; /* Задаємо відносний розмір висоти контейнера */
+	border-radius: 50%;
+	border: 1px solid #000;
+ }
+ 
+ @media only screen and (max-width: 768px) {
+	.display-container {
+	  width: 20%;
+	  padding-bottom: 20%; 
+	}
+ }
+ 
