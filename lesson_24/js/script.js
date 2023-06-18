@@ -232,86 +232,110 @@ class BackgroundColorManager {
 		this.container = container;
 		this.colorInput = null;
 		this.changeCount = 0;
+		this.changeCountDisplay = null;
+		this.displayDiv = null;
+
 		this.initialize();
 	}
 
 	initialize() {
-		this.createColorTask();
-		this.createCountTask();
+		this.createColorSelectionTask();
+		this.createChangeCountTask();
 		this.createDisplayTask();
-		this.restoreColor();
+		this.restoreBackgroundColor();
 		this.addEventListeners();
 	}
 
-	createColorTask() {
-		const colorTaskDiv = document.createElement('div');
-		colorTaskDiv.classList.add('task');
+	createColorSelectionTask() {
+		const colorTaskDiv = this.createTaskElement();
 		this.container.appendChild(colorTaskDiv);
 
-		const colorInputLabel = document.createElement('label');
-		colorInputLabel.textContent = 'Вибір кольору:';
+		const colorInputLabel = this.createLabelElement('Вибір кольору:');
 		colorTaskDiv.appendChild(colorInputLabel);
 
-		this.colorInput = document.createElement('input');
-		this.colorInput.type = 'color';
+		this.colorInput = this.createColorInputElement();
 		colorTaskDiv.appendChild(this.colorInput);
 	}
 
-	createCountTask() {
-		const countTaskDiv = document.createElement('div');
-		countTaskDiv.classList.add('task');
+	createChangeCountTask() {
+		const countTaskDiv = this.createTaskElement();
 		this.container.appendChild(countTaskDiv);
 
-		const countLabel = document.createElement('label');
-		countLabel.textContent = 'Кількість змін кольору:';
+		const countLabel = this.createLabelElement('Кількість змін кольору:');
 		countTaskDiv.appendChild(countLabel);
 
-		const changeCountDisplay = document.createElement('span');
-		changeCountDisplay.id = 'changeCountDisplay';
-		changeCountDisplay.classList.add('change-count');
-		countTaskDiv.appendChild(changeCountDisplay);
-
-		this.changeCountDisplay = changeCountDisplay;
+		this.changeCountDisplay = this.createChangeCountDisplayElement();
+		countTaskDiv.appendChild(this.changeCountDisplay);
 	}
 
 	createDisplayTask() {
-		const displayTaskDiv = document.createElement('div');
-		displayTaskDiv.classList.add('task');
+		const displayTaskDiv = this.createTaskElement();
 		this.container.appendChild(displayTaskDiv);
 
-		const displayLabel = document.createElement('label');
-		displayLabel.textContent = 'Демонстрація зміни бекграунда:';
+		const displayLabel = this.createLabelElement('Демонстрація зміни бекграунда:');
 		displayTaskDiv.appendChild(displayLabel);
 
-		this.displayDiv = document.createElement('div');
-		this.displayDiv.classList.add('display-container');
+		this.displayDiv = this.createDisplayContainerElement();
 		displayTaskDiv.appendChild(this.displayDiv);
 	}
 
-	restoreColor() {
+	restoreBackgroundColor() {
 		const savedColor = localStorage.getItem('backgroundColor');
-		if (savedColor) this.displayDiv.style.backgroundColor = savedColor;
+		if (savedColor) {
+			this.displayDiv.style.backgroundColor = savedColor;
+		}
 	}
 
 	addEventListeners() {
-		this.colorInput.addEventListener('change', () => this.changeBackgroundColor());
+		this.colorInput.addEventListener('change', () => this.handleColorChange());
 	}
 
-	changeBackgroundColor() {
+	handleColorChange() {
 		const newColor = this.colorInput.value;
 		this.displayDiv.style.backgroundColor = newColor;
 		localStorage.setItem('backgroundColor', newColor);
-		this.updateChangeCount();
+		this.incrementChangeCount();
 	}
 
-	updateChangeCount() {
+	incrementChangeCount() {
 		this.changeCount++;
 		sessionStorage.setItem('changeCount', this.changeCount);
-		this.displayChangeCount();
+		this.updateChangeCountDisplay();
 	}
 
-	displayChangeCount() {
+	updateChangeCountDisplay() {
 		this.changeCountDisplay.textContent = this.changeCount;
+	}
+
+	createTaskElement() {
+		const taskElement = document.createElement('div');
+		taskElement.classList.add('task');
+		return taskElement;
+	}
+
+	createLabelElement(text) {
+		const labelElement = document.createElement('label');
+		labelElement.textContent = text;
+		return labelElement;
+	}
+
+	createColorInputElement() {
+		const colorInputElement = document.createElement('input');
+		colorInputElement.type = 'color';
+		return colorInputElement;
+	}
+
+	createChangeCountDisplayElement() {
+		const changeCountDisplayElement = document.createElement('span');
+		changeCountDisplayElement.id = 'changeCountDisplay';
+		changeCountDisplayElement.classList.add('change-count');
+		return changeCountDisplayElement;
+	}
+
+	createDisplayContainerElement() {
+		const displayContainerElement = document.createElement('div');
+		displayContainerElement.classList.add('display-container');
+		return displayContainerElement;
 	}
 }
 
