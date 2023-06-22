@@ -108,34 +108,39 @@ for (const product of shop) {
 // ================================================================
 console.log('---------------------Задача 3------------------------');
 
-function* randomEvenNumbersGenerator(minRange, maxRange, count) {
-	let generatedCount = 0;
+class RandomEvenNumbersGenerator {
+	constructor(minRange, maxRange, count) {
+		this.minRange = minRange;
+		this.maxRange = maxRange;
+		this.count = count;
+		this.generatedCount = 0;
+	}
 
-	while (generatedCount < count) {
-		const randomNumber = getRandomNumber(minRange, maxRange);
-
-		if (isEven(randomNumber)) {
-			yield randomNumber;
-			generatedCount++;
+	*generate() {
+		while (this.generatedCount < this.count) {
+			const randomNumber = this.getRandomNumber(this.minRange, this.maxRange);
+			if (this.isEven(randomNumber)) {
+				yield randomNumber;
+				this.generatedCount++;
+			}
 		}
 	}
-}
 
-function getRandomNumber(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+	getRandomNumber(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
 
-function isEven(number) {
-	return number % 2 === 0;
+	isEven(number) {
+		return number % 2 === 0;
+	}
 }
 
 const minRange = 2;
 const maxRange = 100;
 const count = 5;
 
-const generator = randomEvenNumbersGenerator(minRange, maxRange, count);
-
-const numbers = [...generator];
+const generator = new RandomEvenNumbersGenerator(minRange, maxRange, count);
+const numbers = [...generator.generate()];
 console.log(numbers);
 // ================================================================
 // Задача 4. Використовуючи один з АРІ 
@@ -189,10 +194,3 @@ const apiUrl = 'https://dog.ceo/api/breeds/image/random';
 const imageContainer = document.getElementById('image-container');
 const dataFetcher = new DataFetcher(apiUrl, imageContainer);
 dataFetcher.fetchData();
-
-
-
-
-
-
-
