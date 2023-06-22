@@ -147,7 +147,6 @@ console.log(numbers);
 // https://github.com/public-apis/public-apis#animals
 // та функцію fetch організувати завантаження та відображення даних
 // ================================================================
-// Функція для завантаження та відображення даних з API
 class DataFetcher {
 	constructor(apiUrl, containerElement) {
 		this.apiUrl = apiUrl;
