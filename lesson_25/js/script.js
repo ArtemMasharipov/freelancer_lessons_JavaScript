@@ -188,7 +188,6 @@ class DataFetcher {
 	}
 }
 
-// Виклик класу DataFetcher та функції fetchData
 const apiUrl = 'https://dog.ceo/api/breeds/image/random';
 const imageContainer = document.getElementById('image-container');
 const dataFetcher = new DataFetcher(apiUrl, imageContainer);
