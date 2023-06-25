@@ -13,24 +13,35 @@ class PhoneNumber {
 	}
 
 	[Symbol.toPrimitive](hint) {
+		let result;
+
 		switch (hint) {
 			case 'string':
-				return this.getOperator();
+				result = this.getOperator();
+				break;
 			case 'number':
-				return Number(this.number);
+				result = Number(this.number);
+				break;
 			default:
-				return this.number;
+				result = this.number;
+				break;
 		}
+
+		return result;
 	}
 
 	getOperator() {
+		let operator;
+
 		if (this.number.startsWith('050')) {
-			return 'MTC';
+			operator = 'MTC';
 		} else if (this.number.startsWith('096')) {
-			return 'Kyivstar';
+			operator = 'Kyivstar';
 		} else {
-			return 'Unknown Operator';
+			operator = 'Unknown Operator';
 		}
+
+		return operator;
 	}
 }
 
