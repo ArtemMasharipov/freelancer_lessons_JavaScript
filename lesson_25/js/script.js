@@ -36,10 +36,17 @@ class PhoneNumber {
 			'096': 'Kyivstar'
 		};
 
-		const operator = Object.keys(operators).find(prefix => this.number.startsWith(prefix));
+		let operator = 'Unknown Operator';
+		for (let prefix in operators) {
+			if (this.number.startsWith(prefix)) {
+				operator = operators[prefix];
+				break;
+			}
+		}
 
-		return operator ? operators[operator] : 'Unknown Operator';
+		return operator;
 	}
+
 }
 
 // Приклад використання:
