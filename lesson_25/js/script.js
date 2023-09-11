@@ -31,17 +31,14 @@ class PhoneNumber {
 	}
 
 	getOperator() {
-		let operator;
+		const operators = {
+			'050': 'MTC',
+			'096': 'Kyivstar'
+		};
 
-		if (this.number.startsWith('050')) {
-			operator = 'MTC';
-		} else if (this.number.startsWith('096')) {
-			operator = 'Kyivstar';
-		} else {
-			operator = 'Unknown Operator';
-		}
+		const operator = Object.keys(operators).find(prefix => this.number.startsWith(prefix));
 
-		return operator;
+		return operator ? operators[operator] : 'Unknown Operator';
 	}
 }
 
