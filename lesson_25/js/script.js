@@ -10,48 +10,35 @@ console.log('---------------------Задача 1------------------------');
 class PhoneNumber {
 	constructor(number) {
 		this.number = number;
-	}
-
-	[Symbol.toPrimitive](hint) {
-		let result;
-
-		switch (hint) {
-			case 'string':
-				result = this.getOperator();
-				break;
-			case 'number':
-				result = Number(this.number);
-				break;
-			default:
-				result = this.number;
-				break;
-		}
-
-		return result;
-	}
-
-	getOperator() {
-		const operators = {
+		this.operators = {
 			'050': 'MTC',
 			'096': 'Kyivstar'
 		};
-
-		let operator = 'Unknown Operator';
-		for (let prefix in operators) {
-			if (this.number.startsWith(prefix)) {
-				operator = operators[prefix];
-				break;
-			}
-		}
-
-		return operator;
 	}
 
+	Symbol.toPrimitive {
+		switch (hint) {
+			case 'string':
+				return this.getOperator();
+			case 'number':
+				return Number(this.number);
+			default:
+				return this.number;
+		}
+	}
+
+	getOperator() {
+		for (let prefix in this.operators) {
+			if (this.number.startsWith(prefix)) {
+				return this.operators[prefix];
+			}
+		}
+		return 'Unknown Operator';
+	}
 }
 
 // Приклад використання:
 const phoneNumber = new PhoneNumber('0501234567');
-
 console.log(String(phoneNumber));
 // ================================================================
 // Задача 2. Дано Shop  -- клас, що містить список товарів (масив 
