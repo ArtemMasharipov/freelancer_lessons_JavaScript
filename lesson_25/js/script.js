@@ -133,7 +133,7 @@ class RandomEvenNumbersGenerator {
 
 	*generate() {
 		while (this.generatedCount < this.count) {
-			const randomNumber = this.getRandomNumber(this.minRange, this.maxRange);
+			const randomNumber = this.getRandomNumber();
 			if (this.isEven(randomNumber)) {
 				yield randomNumber;
 				this.generatedCount++;
@@ -141,8 +141,8 @@ class RandomEvenNumbersGenerator {
 		}
 	}
 
-	getRandomNumber(min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+	getRandomNumber() {
+		return Math.floor(Math.random() * (this.maxRange - this.minRange + 1)) + this.minRange;
 	}
 
 	isEven(number) {
