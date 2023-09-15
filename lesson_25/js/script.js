@@ -8,12 +8,19 @@
 console.log('---------------------Задача 1------------------------');
 
 class PhoneNumber {
-	constructor(number) {
+	constructor(number, operators = {}) {
 		this.number = number;
-		this.operators = {
-			'050': 'MTC',
-			'096': 'Kyivstar'
-		};
+		this.operators = operators;
+	}
+
+	addOperator(prefix, operatorName) {
+		this.operators[prefix] = operatorName;
+	}
+
+	removeOperator(prefix) {
+		if (this.operators.hasOwnProperty(prefix)) {
+			delete this.operators[prefix];
+		}
 	}
 
 	[Symbol.toPrimitive](hint) {
@@ -38,8 +45,14 @@ class PhoneNumber {
 }
 
 // Приклад використання:
-const phoneNumber = new PhoneNumber('0501234567');
-console.log(String(phoneNumber));
+const operators = {
+	'050': 'MTC',
+	'096': 'Kyivstar'
+};
+
+const phoneNumber = new PhoneNumber('0501234567', operators);
+phoneNumber.addOperator('091', 'New Operator');
+console.log(String(phoneNumber)); 
 // ================================================================
 // Задача 2. Дано Shop  -- клас, що містить список товарів (масив 
 // об’єктів класу Product (назва, ціна, кількість одиниць). Додати 
