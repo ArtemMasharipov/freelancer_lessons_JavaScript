@@ -16,7 +16,7 @@ class PhoneNumber {
 		};
 	}
 
-	Symbol.toPrimitive {
+	[Symbol.toPrimitive](hint) {
 		switch (hint) {
 			case 'string':
 				return this.getOperator();
